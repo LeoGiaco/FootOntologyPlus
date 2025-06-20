@@ -71,6 +71,28 @@
     
 
 
+    <!-- http://visualdataweb.org/FootOntologyPlus/hasAwayTeamFormation -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/hasAwayTeamFormation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Match"/>
+        <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/Formation"/>
+        <rdfs:comment>Specifies that the away team used a specific formation in the given match.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/hasHomeTeamFormation -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/hasHomeTeamFormation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Match"/>
+        <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/Formation"/>
+        <rdfs:comment>Specifies that the home team used a specific formation in the given match.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://visualdataweb.org/FootOntologyPlus/hasPerformanceStats -->
 
     <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/hasPerformanceStats">
@@ -426,6 +448,18 @@
     
 
 
+    <!-- http://visualdataweb.org/FootOntologyPlus/BirthDate -->
+
+    <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/BirthDate">
+        <owl:equivalentProperty rdf:resource="http://visualdataweb.org/FootOntologyPlus/PlayerBirthdate"/>
+        <owl:equivalentProperty rdf:resource="http://visualdataweb.org/FootOntologyPlus/RBirthdate"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://visualdataweb.org/FootOntologyPlus/CPreferredFormation -->
 
     <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/CPreferredFormation">
@@ -477,6 +511,7 @@
     <!-- http://visualdataweb.org/FootOntologyPlus/CoachName -->
 
     <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/CoachName">
+        <owl:equivalentProperty rdf:resource="http://visualdataweb.org/FootOntologyPlus/FullName"/>
         <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Coach"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>The name of a team coach</rdfs:comment>
@@ -489,6 +524,7 @@
     <!-- http://visualdataweb.org/FootOntologyPlus/CoachNationality -->
 
     <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/CoachNationality">
+        <owl:equivalentProperty rdf:resource="http://visualdataweb.org/FootOntologyPlus/Nationality"/>
         <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Coach"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>The nationality of a coach</rdfs:comment>
@@ -522,6 +558,18 @@
     
 
 
+    <!-- http://visualdataweb.org/FootOntologyPlus/FullName -->
+
+    <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/FullName">
+        <owl:equivalentProperty rdf:resource="http://visualdataweb.org/FootOntologyPlus/PlayerName"/>
+        <owl:equivalentProperty rdf:resource="http://visualdataweb.org/FootOntologyPlus/RefereeName"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://visualdataweb.org/FootOntologyPlus/GoalsScored -->
 
     <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/GoalsScored">
@@ -530,6 +578,17 @@
         <rdfs:comment>The goals scored by a player</rdfs:comment>
         <rdfs:label>goalsScored</rdfs:label>
         <rdfs:label xml:lang="en">goalsScored</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Height -->
+
+    <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/Height">
+        <owl:equivalentProperty rdf:resource="http://visualdataweb.org/FootOntologyPlus/PlayerHeight"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     </owl:DatatypeProperty>
     
 
@@ -594,6 +653,17 @@
     
 
 
+    <!-- http://visualdataweb.org/FootOntologyPlus/Nationality -->
+
+    <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/Nationality">
+        <owl:equivalentProperty rdf:resource="http://visualdataweb.org/FootOntologyPlus/RefereeNationality"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://visualdataweb.org/FootOntologyPlus/NumberOfTeams -->
 
     <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/NumberOfTeams">
@@ -634,10 +704,22 @@
 
     <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/PlayerBirthdate">
         <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>The birthday of a player</rdfs:comment>
         <rdfs:label>playerBirthdate</rdfs:label>
         <rdfs:label xml:lang="en">playerBirthdate</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/PlayerHeight -->
+
+    <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/PlayerHeight">
+        <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The height of a player</rdfs:comment>
+        <rdfs:label>PlayerHeight</rdfs:label>
+        <rdfs:label xml:lang="en">PlayerHeight</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -929,18 +1011,6 @@
     
 
 
-    <!-- http://visualdataweb.org/FootOntologyPlus/height -->
-
-    <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/height">
-        <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <rdfs:comment>The height of a player</rdfs:comment>
-        <rdfs:label xml:lang="en">height</rdfs:label>
-        <rdfs:label xml:lang="iri-based">height</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -965,10 +1035,17 @@
     <!-- http://visualdataweb.org/FootOntologyPlus/Coach -->
 
     <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/Coach">
+        <rdfs:subClassOf rdf:resource="https://schema.org/Person"/>
         <rdfs:comment>The coach managing a team</rdfs:comment>
         <rdfs:label>coach</rdfs:label>
         <rdfs:label xml:lang="en">coach</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Formation -->
+
+    <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/Formation"/>
     
 
 
@@ -1017,6 +1094,7 @@
     <!-- http://visualdataweb.org/FootOntologyPlus/Player -->
 
     <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/Player">
+        <rdfs:subClassOf rdf:resource="https://schema.org/Person"/>
         <rdfs:comment>A professional football player</rdfs:comment>
         <rdfs:label>player</rdfs:label>
         <rdfs:label xml:lang="en">player</rdfs:label>
@@ -1036,6 +1114,7 @@
     <!-- http://visualdataweb.org/FootOntologyPlus/Referee -->
 
     <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/Referee">
+        <rdfs:subClassOf rdf:resource="https://schema.org/Person"/>
         <rdfs:comment>The referee officiating a football match</rdfs:comment>
         <rdfs:label>referee</rdfs:label>
         <rdfs:label xml:lang="en">referee</rdfs:label>
@@ -1079,6 +1158,27 @@
         <rdfs:comment>A trophy won by a team</rdfs:comment>
         <rdfs:label>trophy</rdfs:label>
         <rdfs:label xml:lang="en">trophy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/Person -->
+
+    <owl:Class rdf:about="https://schema.org/Person">
+        <rdfs:subClassOf rdf:resource="https://schema.org/Thing"/>
+        <rdfs:comment xml:lang="en">A person (alive, dead, undead, or fictional).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://schema.org/Person"/>
+        <rdfs:label xml:lang="en">Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/Thing -->
+
+    <owl:Class rdf:about="https://schema.org/Thing">
+        <rdfs:comment xml:lang="en">The most generic type of item.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://schema.org/Thing"/>
+        <rdfs:label xml:lang="en">Thing</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 
