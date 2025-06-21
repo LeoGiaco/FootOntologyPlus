@@ -9,7 +9,8 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:FootOntologyPlus="http://visualdataweb.org/FootOntologyPlus/">
     <owl:Ontology rdf:about="http://visualdataweb.org/FootOntologyPlus/">
         <dc:description xml:lang="en">An ontology about the football domain</dc:description>
         <dc:license>https://creativecommons.org/licenses/by/4.0/</dc:license>
@@ -82,6 +83,24 @@
     
 
 
+    <!-- http://visualdataweb.org/FootOntologyPlus/hasDefender -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/hasDefender">
+        <rdfs:subPropertyOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasPosInFormation"/>
+        <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/Defender"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/hasGoalkeeper -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/hasGoalkeeper">
+        <rdfs:subPropertyOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasPosInFormation"/>
+        <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/Goalkeeper"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://visualdataweb.org/FootOntologyPlus/hasHomeTeamFormation -->
 
     <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/hasHomeTeamFormation">
@@ -89,6 +108,15 @@
         <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Match"/>
         <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/Formation"/>
         <rdfs:comment>Specifies that the home team used a specific formation in the given match.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/hasMidfielder -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/hasMidfielder">
+        <rdfs:subPropertyOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasPosInFormation"/>
+        <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/Midfielder"/>
     </owl:ObjectProperty>
     
 
@@ -109,6 +137,16 @@
         <owl:inverseOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/participatesIn"/>
         <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Match"/>
         <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/hasPosInFormation -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/hasPosInFormation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Formation"/>
+        <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/Position"/>
     </owl:ObjectProperty>
     
 
@@ -134,6 +172,15 @@
         <rdfs:comment>The performance stats of a specific player, like goals, assists, and so on</rdfs:comment>
         <rdfs:label xml:lang="en">hasStats</rdfs:label>
         <rdfs:label xml:lang="iri-based">hasStats</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/hasStriker -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/hasStriker">
+        <rdfs:subPropertyOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasPosInFormation"/>
+        <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/Striker"/>
     </owl:ObjectProperty>
     
 
@@ -664,6 +711,36 @@
     
 
 
+    <!-- http://visualdataweb.org/FootOntologyPlus/NumberOfDefenders -->
+
+    <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/NumberOfDefenders">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Formation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/NumberOfMidfielders -->
+
+    <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/NumberOfMidfielders">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Formation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/NumberOfStrikers -->
+
+    <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/NumberOfStrikers">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Formation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://visualdataweb.org/FootOntologyPlus/NumberOfTeams -->
 
     <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/NumberOfTeams">
@@ -1043,9 +1120,139 @@
     
 
 
+    <!-- http://visualdataweb.org/FootOntologyPlus/Defender -->
+
+    <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/Defender">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/CB"/>
+                    <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/FB"/>
+                    <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/WB"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/Position"/>
+    </owl:Class>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/FiveDefenderFormation -->
+
+    <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/FiveDefenderFormation">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/Formation"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasDefender"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">5</owl:maxQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://visualdataweb.org/FootOntologyPlus/Defender"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://visualdataweb.org/FootOntologyPlus/NumberOfDefenders"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/Formation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/FiveMidfielderFormation -->
+
+    <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/FiveMidfielderFormation">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/Formation"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasMidfielder"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">5</owl:maxQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://visualdataweb.org/FootOntologyPlus/Midfielder"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://visualdataweb.org/FootOntologyPlus/NumberOfMidfielders"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/Formation"/>
+    </owl:Class>
+    
+
+
     <!-- http://visualdataweb.org/FootOntologyPlus/Formation -->
 
-    <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/Formation"/>
+    <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/Formation">
+        <rdfs:label>formation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/FourDefenderFormation -->
+
+    <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/FourDefenderFormation">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/Formation"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasDefender"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">4</owl:maxQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://visualdataweb.org/FootOntologyPlus/Defender"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://visualdataweb.org/FootOntologyPlus/NumberOfDefenders"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/Formation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/FourMidfielderFormation -->
+
+    <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/FourMidfielderFormation">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/Formation"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasMidfielder"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">4</owl:maxQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://visualdataweb.org/FootOntologyPlus/Midfielder"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://visualdataweb.org/FootOntologyPlus/NumberOfMidfielders"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/Formation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Goalkeeper -->
+
+    <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/Goalkeeper">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/GK"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/Position"/>
+    </owl:Class>
     
 
 
@@ -1077,6 +1284,47 @@
         <rdfs:comment>A competetive football event held between two teams</rdfs:comment>
         <rdfs:label>match</rdfs:label>
         <rdfs:label xml:lang="en">match</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Midfielder -->
+
+    <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/Midfielder">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/CAM"/>
+                    <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/CDM"/>
+                    <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/CM"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/Position"/>
+    </owl:Class>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/OneStrikerFormation -->
+
+    <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/OneStrikerFormation">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/Formation"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasStriker"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://visualdataweb.org/FootOntologyPlus/Striker"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://visualdataweb.org/FootOntologyPlus/NumberOfStrikers"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/Formation"/>
     </owl:Class>
     
 
@@ -1132,12 +1380,101 @@
     
 
 
+    <!-- http://visualdataweb.org/FootOntologyPlus/Striker -->
+
+    <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/Striker">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/CF"/>
+                    <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/ST"/>
+                    <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/WG"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/Position"/>
+    </owl:Class>
+    
+
+
     <!-- http://visualdataweb.org/FootOntologyPlus/Team -->
 
     <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/Team">
         <rdfs:comment>A professional football team</rdfs:comment>
         <rdfs:label>team</rdfs:label>
         <rdfs:label xml:lang="en">team</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/ThreeDefenderFormation -->
+
+    <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/ThreeDefenderFormation">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/Formation"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasDefender"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:maxQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://visualdataweb.org/FootOntologyPlus/Defender"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://visualdataweb.org/FootOntologyPlus/NumberOfDefenders"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/Formation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/ThreeMidfielderFormation -->
+
+    <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/ThreeMidfielderFormation">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/Formation"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasMidfielder"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:maxQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://visualdataweb.org/FootOntologyPlus/Midfielder"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://visualdataweb.org/FootOntologyPlus/NumberOfMidfielders"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/Formation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/ThreeStrikerFormation -->
+
+    <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/ThreeStrikerFormation">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/Formation"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasStriker"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:maxQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://visualdataweb.org/FootOntologyPlus/Striker"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://visualdataweb.org/FootOntologyPlus/NumberOfStrikers"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/Formation"/>
     </owl:Class>
     
 
@@ -1162,6 +1499,54 @@
     
 
 
+    <!-- http://visualdataweb.org/FootOntologyPlus/TwoMidfielderFormation -->
+
+    <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/TwoMidfielderFormation">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/Formation"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasMidfielder"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:maxQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://visualdataweb.org/FootOntologyPlus/Midfielder"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://visualdataweb.org/FootOntologyPlus/NumberOfMidfielders"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/Formation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/TwoStrikerFormation -->
+
+    <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/TwoStrikerFormation">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/Formation"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasStriker"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:maxQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://visualdataweb.org/FootOntologyPlus/Striker"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://visualdataweb.org/FootOntologyPlus/NumberOfStrikers"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/Formation"/>
+    </owl:Class>
+    
+
+
     <!-- https://schema.org/Person -->
 
     <owl:Class rdf:about="https://schema.org/Person">
@@ -1180,6 +1565,214 @@
         <rdfs:isDefinedBy rdf:resource="https://schema.org/Thing"/>
         <rdfs:label xml:lang="en">Thing</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/CAM -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/CAM">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Midfielder"/>
+        <rdfs:comment>Attacking Midfielder</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/CB -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/CB">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Defender"/>
+        <rdfs:comment>Centre-Back</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/CDM -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/CDM">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Midfielder"/>
+        <rdfs:comment>Central Midfielder</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/CF -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/CF">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Striker"/>
+        <rdfs:comment>Striker</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/CM -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/CM">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Midfielder"/>
+        <rdfs:comment>Central Midfielder</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/FB -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/FB">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Defender"/>
+        <rdfs:comment>Full-Back</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/GK -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/GK">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Goalkeeper"/>
+        <rdfs:comment>Goalkeeper</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/ST -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/ST">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Striker"/>
+        <rdfs:comment>Forward</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/WB -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/WB">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Defender"/>
+        <rdfs:comment>Wing-back</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/WG -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/WG">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Striker"/>
+        <rdfs:comment>Winger</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/343 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/343">
+        <FootOntologyPlus:NumberOfDefenders rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</FootOntologyPlus:NumberOfDefenders>
+        <FootOntologyPlus:NumberOfMidfielders rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</FootOntologyPlus:NumberOfMidfielders>
+        <FootOntologyPlus:NumberOfStrikers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</FootOntologyPlus:NumberOfStrikers>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/352 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/352">
+        <FootOntologyPlus:NumberOfDefenders rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</FootOntologyPlus:NumberOfDefenders>
+        <FootOntologyPlus:NumberOfMidfielders rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</FootOntologyPlus:NumberOfMidfielders>
+        <FootOntologyPlus:NumberOfMidfielders rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</FootOntologyPlus:NumberOfMidfielders>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/424 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/424"/>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/433 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/433"/>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/442 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/442"/>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/451 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/451"/>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/523 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/523"/>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/532 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/532"/>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/541 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/541"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/Defender"/>
+            <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/Goalkeeper"/>
+            <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/Midfielder"/>
+            <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/Striker"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/FiveDefenderFormation"/>
+            <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/FourDefenderFormation"/>
+            <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/ThreeDefenderFormation"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/FiveMidfielderFormation"/>
+            <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/FourMidfielderFormation"/>
+            <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/ThreeMidfielderFormation"/>
+            <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/TwoMidfielderFormation"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/OneStrikerFormation"/>
+            <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/ThreeStrikerFormation"/>
+            <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/TwoStrikerFormation"/>
+        </owl:members>
+    </rdf:Description>
 </rdf:RDF>
 
 
