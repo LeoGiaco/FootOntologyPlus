@@ -72,6 +72,36 @@
     
 
 
+    <!-- http://visualdataweb.org/FootOntologyPlus/cornerPlayedBy -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/cornerPlayedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/playsCorner"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/freeKickPlayedBy -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/freeKickPlayedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/playsFreeKick"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/givenTo -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/givenTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasReceived"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://visualdataweb.org/FootOntologyPlus/hasAwayTeam -->
 
     <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/hasAwayTeam">
@@ -98,6 +128,28 @@
     
 
 
+    <!-- http://visualdataweb.org/FootOntologyPlus/hasCard -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/hasCard">
+        <rdfs:subPropertyOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasEvent"/>
+        <owl:inverseOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/isCardIn"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/Card"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/hasCorner -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/hasCorner">
+        <rdfs:subPropertyOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasEvent"/>
+        <owl:inverseOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/isCornerIn"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/Corner"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://visualdataweb.org/FootOntologyPlus/hasDefender -->
 
     <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/hasDefender">
@@ -114,6 +166,17 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Substitution"/>
         <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/hasEvent -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/hasEvent">
+        <owl:inverseOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/isEventIn"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Match"/>
+        <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/MatchEvent"/>
     </owl:ObjectProperty>
     
 
@@ -136,6 +199,17 @@
         <owl:inverseOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/isFormationOf"/>
         <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team"/>
         <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/Formation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/hasFreeKick -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/hasFreeKick">
+        <rdfs:subPropertyOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasEvent"/>
+        <owl:inverseOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/isFreeKickIn"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/FreeKick"/>
     </owl:ObjectProperty>
     
 
@@ -185,6 +259,28 @@
     
 
 
+    <!-- http://visualdataweb.org/FootOntologyPlus/hasOffside -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/hasOffside">
+        <rdfs:subPropertyOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasEvent"/>
+        <owl:inverseOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/isOffsideIn"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/Offside"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/hasPenaltyKick -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/hasPenaltyKick">
+        <rdfs:subPropertyOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasFreeKick"/>
+        <owl:inverseOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/isPenaltyKickIn"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/PenaltyKick"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://visualdataweb.org/FootOntologyPlus/hasPerformanceStats -->
 
     <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/hasPerformanceStats">
@@ -224,6 +320,27 @@
         <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/Position"/>
         <rdfs:comment>This shows the position of a specific player</rdfs:comment>
         <rdfs:label xml:lang="en">hasPosition</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/hasReceived -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/hasReceived">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/CanBeCarded"/>
+        <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/Card"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/hasRedCard -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/hasRedCard">
+        <rdfs:subPropertyOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasCard"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/RedCard"/>
     </owl:ObjectProperty>
     
 
@@ -273,7 +390,7 @@
     <!-- http://visualdataweb.org/FootOntologyPlus/hasSubstitution -->
 
     <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/hasSubstitution">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasEvent"/>
         <owl:inverseOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/isSubstitutionIn"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Match"/>
@@ -312,6 +429,16 @@
         <owl:inverseOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/isWinner"/>
         <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Match"/>
         <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/hasYellowCard -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/hasYellowCard">
+        <rdfs:subPropertyOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasCard"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/YellowCard"/>
     </owl:ObjectProperty>
     
 
@@ -366,6 +493,16 @@
     
 
 
+    <!-- http://visualdataweb.org/FootOntologyPlus/involvedPlayer -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/involvedPlayer">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/wasFoundInOffside"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://visualdataweb.org/FootOntologyPlus/isAwayFormationIn -->
 
     <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/isAwayFormationIn">
@@ -389,6 +526,32 @@
     
 
 
+    <!-- http://visualdataweb.org/FootOntologyPlus/isCardIn -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/isCardIn">
+        <rdfs:subPropertyOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/isEventIn"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/isCornerIn -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/isCornerIn">
+        <rdfs:subPropertyOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/isEventIn"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/isEventIn -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/isEventIn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://visualdataweb.org/FootOntologyPlus/isFormationIn -->
 
     <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/isFormationIn">
@@ -404,6 +567,15 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Formation"/>
         <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/isFreeKickIn -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/isFreeKickIn">
+        <rdfs:subPropertyOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/isEventIn"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </owl:ObjectProperty>
     
 
@@ -443,6 +615,24 @@
     
 
 
+    <!-- http://visualdataweb.org/FootOntologyPlus/isOffsideIn -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/isOffsideIn">
+        <rdfs:subPropertyOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/isEventIn"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/isPenaltyKickIn -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/isPenaltyKickIn">
+        <rdfs:subPropertyOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/isFreeKickIn"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://visualdataweb.org/FootOntologyPlus/isPreferredPositionOf -->
 
     <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/isPreferredPositionOf">
@@ -450,6 +640,14 @@
         <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
         <rdfs:comment>A position held by a player</rdfs:comment>
         <rdfs:label>isPositionOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/isRedCardIn -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/isRedCardIn">
+        <rdfs:subPropertyOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/isCardIn"/>
     </owl:ObjectProperty>
     
 
@@ -475,7 +673,7 @@
     <!-- http://visualdataweb.org/FootOntologyPlus/isSubstitutionIn -->
 
     <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/isSubstitutionIn">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/isEventIn"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </owl:ObjectProperty>
     
@@ -495,6 +693,14 @@
         <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team"/>
         <rdfs:comment>A trophy won by a team</rdfs:comment>
         <rdfs:label>isWonBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/isYellowCardIn -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/isYellowCardIn">
+        <rdfs:subPropertyOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/isCardIn"/>
     </owl:ObjectProperty>
     
 
@@ -585,6 +791,27 @@
     
 
 
+    <!-- http://visualdataweb.org/FootOntologyPlus/penaltyKickPlayedBy -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/penaltyKickPlayedBy">
+        <rdfs:subPropertyOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/freeKickPlayedBy"/>
+        <owl:inverseOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/playsPenaltyKick"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/playsCorner -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/playsCorner">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team"/>
+        <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/Corner"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://visualdataweb.org/FootOntologyPlus/playsFor -->
 
     <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/playsFor">
@@ -594,6 +821,17 @@
         <rdfs:comment>The team a specific player is playing for</rdfs:comment>
         <rdfs:label xml:lang="en">playsFor</rdfs:label>
         <rdfs:label xml:lang="iri-based">playsFor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/playsFreeKick -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/playsFreeKick">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team"/>
+        <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/FreeKick"/>
     </owl:ObjectProperty>
     
 
@@ -619,6 +857,17 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
         <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/Position"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/playsPenaltyKick -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/playsPenaltyKick">
+        <rdfs:subPropertyOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/playsFreeKick"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team"/>
+        <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/PenaltyKick"/>
     </owl:ObjectProperty>
     
 
@@ -660,6 +909,27 @@
     
 
 
+    <!-- http://visualdataweb.org/FootOntologyPlus/scoredBy -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/scoredBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/scores"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/scores -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/scores">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team"/>
+        <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/Goal"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://visualdataweb.org/FootOntologyPlus/statsOf -->
 
     <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/statsOf">
@@ -667,6 +937,17 @@
         <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
         <rdfs:comment>The performance stats of a player</rdfs:comment>
         <rdfs:label>statsOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/wasFoundInOffside -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/wasFoundInOffside">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/Offside"/>
     </owl:ObjectProperty>
     
 
@@ -899,10 +1180,11 @@
     
 
 
-    <!-- http://visualdataweb.org/FootOntologyPlus/MinuteOfSubstitution -->
+    <!-- http://visualdataweb.org/FootOntologyPlus/MinuteOfEvent -->
 
-    <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/MinuteOfSubstitution">
-        <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Substitution"/>
+    <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/MinuteOfEvent">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/MatchEvent"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     </owl:DatatypeProperty>
     
@@ -1322,13 +1604,39 @@
     
 
 
+    <!-- http://visualdataweb.org/FootOntologyPlus/CanBeCarded -->
+
+    <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/CanBeCarded">
+        <rdfs:subClassOf rdf:resource="https://schema.org/Person"/>
+        <owl:disjointWith rdf:resource="http://visualdataweb.org/FootOntologyPlus/Referee"/>
+    </owl:Class>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Card -->
+
+    <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/Card">
+        <rdfs:subClassOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/MatchEvent"/>
+    </owl:Class>
+    
+
+
     <!-- http://visualdataweb.org/FootOntologyPlus/Coach -->
 
     <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/Coach">
-        <rdfs:subClassOf rdf:resource="https://schema.org/Person"/>
+        <rdfs:subClassOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/CanBeCarded"/>
+        <owl:disjointWith rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
         <rdfs:comment>The coach managing a team</rdfs:comment>
         <rdfs:label>coach</rdfs:label>
         <rdfs:label xml:lang="en">coach</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Corner -->
+
+    <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/Corner">
+        <rdfs:subClassOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/MatchEvent"/>
     </owl:Class>
     
 
@@ -1360,6 +1668,22 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label>formation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/FreeKick -->
+
+    <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/FreeKick">
+        <rdfs:subClassOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/MatchEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Goal -->
+
+    <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/Goal">
+        <rdfs:subClassOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/MatchEvent"/>
     </owl:Class>
     
 
@@ -1404,10 +1728,39 @@
     
 
 
+    <!-- http://visualdataweb.org/FootOntologyPlus/MatchEvent -->
+
+    <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/MatchEvent">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://visualdataweb.org/FootOntologyPlus/MinuteOfEvent"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
     <!-- http://visualdataweb.org/FootOntologyPlus/Midfielder -->
 
     <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/Midfielder">
         <rdfs:subClassOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/Position"/>
+    </owl:Class>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Offside -->
+
+    <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/Offside">
+        <rdfs:subClassOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/MatchEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/PenaltyKick -->
+
+    <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/PenaltyKick">
+        <rdfs:subClassOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/FreeKick"/>
     </owl:Class>
     
 
@@ -1425,7 +1778,7 @@
     <!-- http://visualdataweb.org/FootOntologyPlus/Player -->
 
     <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/Player">
-        <rdfs:subClassOf rdf:resource="https://schema.org/Person"/>
+        <rdfs:subClassOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/CanBeCarded"/>
         <rdfs:comment>A professional football player</rdfs:comment>
         <rdfs:label>player</rdfs:label>
         <rdfs:label xml:lang="en">player</rdfs:label>
@@ -1438,6 +1791,15 @@
     <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/Position">
         <rdfs:comment>This class shows the parent class &quot;Position&quot; which includes subclasses of positions of a player</rdfs:comment>
         <rdfs:label xml:lang="en">position</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/RedCard -->
+
+    <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/RedCard">
+        <rdfs:subClassOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/Card"/>
+        <owl:disjointWith rdf:resource="http://visualdataweb.org/FootOntologyPlus/YellowCard"/>
     </owl:Class>
     
 
@@ -1481,7 +1843,9 @@
 
     <!-- http://visualdataweb.org/FootOntologyPlus/Substitution -->
 
-    <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/Substitution"/>
+    <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/Substitution">
+        <rdfs:subClassOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/MatchEvent"/>
+    </owl:Class>
     
 
 
@@ -1527,6 +1891,14 @@
 
     <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/WG">
         <rdfs:subClassOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/Striker"/>
+    </owl:Class>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/YellowCard -->
+
+    <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/YellowCard">
+        <rdfs:subClassOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/Card"/>
     </owl:Class>
     
 
@@ -1961,6 +2333,17 @@
             <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/CF"/>
             <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/ST"/>
             <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/WG"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/Card"/>
+            <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/Corner"/>
+            <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/FreeKick"/>
+            <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/Goal"/>
+            <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/Offside"/>
+            <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/Substitution"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
