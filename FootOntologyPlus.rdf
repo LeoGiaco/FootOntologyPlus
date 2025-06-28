@@ -442,6 +442,8 @@
     <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/hasReservePlayer">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/isReservePlayerOf"/>
+        <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Formation"/>
+        <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
     </owl:ObjectProperty>
     
 
@@ -878,8 +880,6 @@
 
     <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/isReservePlayerOf">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
-        <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/Formation"/>
     </owl:ObjectProperty>
     
 
@@ -2050,6 +2050,14 @@
     
 
 
+    <!-- http://visualdataweb.org/FootOntologyPlus/DuplicateSubstitutedError -->
+
+    <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/DuplicateSubstitutedError">
+        <rdfs:subClassOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/InvalidSubstitutionError"/>
+    </owl:Class>
+    
+
+
     <!-- http://visualdataweb.org/FootOntologyPlus/Error -->
 
     <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/Error"/>
@@ -2961,29 +2969,6 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/DuplicateSubstituteError"/>
-            <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/InvalidReserveReplacementError"/>
-            <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/InvalidSubstitutionPlayersError"/>
-            <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/StarterAsSubstituteError"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/FriendlyMatchInTournamentError"/>
-            <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/InconsistentContractDatesError"/>
-            <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/InconsistentPlayerPassesError"/>
-            <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/InvalidLeagueMatchFormatError"/>
-            <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/InvalidSubstitutionError"/>
-            <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/MultipleRedCardsError"/>
-            <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/NonGoalKeeperWithSavesError"/>
-            <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/TeamNotInMatchError"/>
-            <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/UncontractedPlayerInMatchError"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/343"/>
             <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/352"/>
             <rdf:Description rdf:about="http://visualdataweb.org/FootOntologyPlus/424"/>
@@ -3034,10 +3019,22 @@
     <rdf:Description rdf:about="http://visualdataweb.org/newOntology/m">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
-    <rdf:Description rdf:about="http://visualdataweb.org/newOntology/e">
+    <rdf:Description rdf:about="http://visualdataweb.org/newOntology/f">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://visualdataweb.org/newOntology/s">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://visualdataweb.org/newOntology/t">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://visualdataweb.org/newOntology/s1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://visualdataweb.org/newOntology/s2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://visualdataweb.org/newOntology/e">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://visualdataweb.org/newOntology/t1">
@@ -3160,6 +3157,191 @@
     <rdf:Description>
         <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
         <rdfs:comment></rdfs:comment>
+        <rdfs:label>StarterAsSubstituteRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasStarterPlayer"/>
+                        <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/f"/>
+                        <swrl:argument2 rdf:resource="http://visualdataweb.org/newOntology/p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasEnteringPlayer"/>
+                                <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/s"/>
+                                <swrl:argument2 rdf:resource="http://visualdataweb.org/newOntology/p"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasTeamFormation"/>
+                                        <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/m"/>
+                                        <swrl:argument2 rdf:resource="http://visualdataweb.org/newOntology/t"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasSubstitution"/>
+                                                <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/m"/>
+                                                <swrl:argument2 rdf:resource="http://visualdataweb.org/newOntology/s"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/StarterAsSubstituteError"/>
+                        <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>DuplicateSubstituteRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasReservePlayer"/>
+                        <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/f"/>
+                        <swrl:argument2 rdf:resource="http://visualdataweb.org/newOntology/p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasEnteringPlayer"/>
+                                <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/s1"/>
+                                <swrl:argument2 rdf:resource="http://visualdataweb.org/newOntology/p"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasEnteringPlayer"/>
+                                        <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/s2"/>
+                                        <swrl:argument2 rdf:resource="http://visualdataweb.org/newOntology/p"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#notEqual"/>
+                                                <swrl:arguments rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://visualdataweb.org/newOntology/s1"/>
+                                                    <rdf:Description rdf:about="http://visualdataweb.org/newOntology/s2"/>
+                                                </swrl:arguments>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasTeamFormation"/>
+                                                        <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/m"/>
+                                                        <swrl:argument2 rdf:resource="http://visualdataweb.org/newOntology/f"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasSubstitution"/>
+                                                                <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/m"/>
+                                                                <swrl:argument2 rdf:resource="http://visualdataweb.org/newOntology/s1"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                        <swrl:propertyPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasSubstitution"/>
+                                                                        <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/m"/>
+                                                                        <swrl:argument2 rdf:resource="http://visualdataweb.org/newOntology/s2"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/DuplicateSubstituteError"/>
+                        <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
         <rdfs:label>TeamNotInMatchRule</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
         <swrl:body>
@@ -3253,6 +3435,119 @@
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
                         <swrl:classPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/TeamNotInMatchError"/>
                         <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/t"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>DuplicateSubstitutedRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasStarterPlayer"/>
+                        <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/f"/>
+                        <swrl:argument2 rdf:resource="http://visualdataweb.org/newOntology/p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasExitingPlayer"/>
+                                <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/s1"/>
+                                <swrl:argument2 rdf:resource="http://visualdataweb.org/newOntology/p"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasExitingPlayer"/>
+                                        <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/s2"/>
+                                        <swrl:argument2 rdf:resource="http://visualdataweb.org/newOntology/p"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#notEqual"/>
+                                                <swrl:arguments rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://visualdataweb.org/newOntology/s1"/>
+                                                    <rdf:Description rdf:about="http://visualdataweb.org/newOntology/s2"/>
+                                                </swrl:arguments>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasTeamFormation"/>
+                                                        <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/m"/>
+                                                        <swrl:argument2 rdf:resource="http://visualdataweb.org/newOntology/f"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasSubstitution"/>
+                                                                <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/m"/>
+                                                                <swrl:argument2 rdf:resource="http://visualdataweb.org/newOntology/s1"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                        <swrl:propertyPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasSubstitution"/>
+                                                                        <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/m"/>
+                                                                        <swrl:argument2 rdf:resource="http://visualdataweb.org/newOntology/s2"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/DuplicateSubstitutedError"/>
+                        <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/p"/>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
