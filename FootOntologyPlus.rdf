@@ -2999,6 +2999,7 @@
 
     <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract1">
         <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player1"/>
         <FootOntologyPlus:ContractEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-10-26T10:30:00</FootOntologyPlus:ContractEndDate>
         <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-10-26T10:30:00</FootOntologyPlus:ContractStartDate>
     </owl:NamedIndividual>
@@ -3015,9 +3016,19 @@
     
 
 
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player1 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player1">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://visualdataweb.org/FootOntologyPlus/Team1 -->
 
-    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Team1"/>
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Team1">
+        <FootOntologyPlus:signsPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract1"/>
+    </owl:NamedIndividual>
     
 
 
