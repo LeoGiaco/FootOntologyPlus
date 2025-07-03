@@ -2976,7 +2976,6 @@
         <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team1"/>
         <FootOntologyPlus:ContractEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-10-26T10:30:00</FootOntologyPlus:ContractEndDate>
         <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-06-05T00:00:00</FootOntologyPlus:ContractStartDate>
-        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-10-26T10:30:00</FootOntologyPlus:ContractStartDate>
         <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3400</FootOntologyPlus:ContractValue>
     </owl:NamedIndividual>
     
