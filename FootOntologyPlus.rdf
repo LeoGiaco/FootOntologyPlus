@@ -338,6 +338,16 @@
     
 
 
+    <!-- http://visualdataweb.org/FootOntologyPlus/hasNationality -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/hasNationality">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/Person"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/ontology/Country"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://visualdataweb.org/FootOntologyPlus/hasOffside -->
 
     <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/hasOffside">
@@ -1415,7 +1425,6 @@
     <!-- http://visualdataweb.org/FootOntologyPlus/CoachNationality -->
 
     <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/CoachNationality">
-        <rdfs:subPropertyOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/Nationality"/>
         <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Coach"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <owl:propertyDisjointWith rdf:resource="http://visualdataweb.org/FootOntologyPlus/RefereeNationality"/>
@@ -1568,16 +1577,6 @@
     
 
 
-    <!-- http://visualdataweb.org/FootOntologyPlus/Nationality -->
-
-    <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/Nationality">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="https://schema.org/Person"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://visualdataweb.org/FootOntologyPlus/NumberOfDefenders -->
 
     <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/NumberOfDefenders">
@@ -1696,7 +1695,6 @@
     <!-- http://visualdataweb.org/FootOntologyPlus/PlayerNationality -->
 
     <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/PlayerNationality">
-        <rdfs:subPropertyOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/Nationality"/>
         <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
@@ -1744,7 +1742,6 @@
     <!-- http://visualdataweb.org/FootOntologyPlus/RefereeNationality -->
 
     <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/RefereeNationality">
-        <rdfs:subPropertyOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/Nationality"/>
         <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Referee"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>The nationality of a referee</rdfs:comment>
@@ -1861,18 +1858,6 @@
     
 
 
-    <!-- http://visualdataweb.org/FootOntologyPlus/TeamLeague -->
-
-    <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/TeamLeague">
-        <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>The league a team is playing in</rdfs:comment>
-        <rdfs:label>teamLeague</rdfs:label>
-        <rdfs:label xml:lang="en">teamLeague</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://visualdataweb.org/FootOntologyPlus/TeamName -->
 
     <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/TeamName">
@@ -1893,18 +1878,6 @@
         <rdfs:comment>The league ranking of a team</rdfs:comment>
         <rdfs:label>teamRanking</rdfs:label>
         <rdfs:label xml:lang="en">teamRanking</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://visualdataweb.org/FootOntologyPlus/TeamSeason -->
-
-    <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/TeamSeason">
-        <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>The season of a team</rdfs:comment>
-        <rdfs:label>teamSeason</rdfs:label>
-        <rdfs:label xml:lang="en">teamSeason</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -3000,8 +2973,1109 @@
     <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract1">
         <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
         <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player1"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team1"/>
         <FootOntologyPlus:ContractEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-10-26T10:30:00</FootOntologyPlus:ContractEndDate>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-06-05T00:00:00</FootOntologyPlus:ContractStartDate>
         <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-10-26T10:30:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3.4</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract10 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract10">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player10"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team1"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-11-28T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3.6</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract11 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract11">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player11"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team1"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-10-28T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2.0</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract12 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract12">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player12"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team2"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-01T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4.3</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract13 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract13">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player13"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team2"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-03-22T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3.5</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract14 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract14">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player14"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team2"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-04-25T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2.3</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract15 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract15">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player15"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team2"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-11-26T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4.9</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract16 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract16">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player16"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team2"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-06-28T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1.6</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract17 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract17">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player17"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team2"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-05-30T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2.2</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract18 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract18">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player18"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team2"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-05-15T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4.5</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract19 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract19">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player19"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team2"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-11-17T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2.3</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract2 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract2">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player2"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team1"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-12-30T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1.8</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract20 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract20">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player20"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team2"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-11-25T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2.5</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract21 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract21">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player21"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team2"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-03-03T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1.8</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract22 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract22">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player22"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team2"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-04-15T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4.1</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract23 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract23">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player23"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team3"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-08-22T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1.7</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract24 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract24">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player24"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team3"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-05-03T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3.6</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract25 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract25">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player25"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team3"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-24T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3.8</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract26 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract26">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player26"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team3"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-11-18T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4.0</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract27 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract27">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player27"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team3"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-07-11T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4.8</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract28 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract28">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player28"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team3"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-05-18T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2.1</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract29 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract29">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player29"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team3"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-02-09T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4.7</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract3 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract3">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player3"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team1"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-12-27T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2.7</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract30 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract30">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player30"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team3"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-02-07T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2.1</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract31 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract31">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player31"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team3"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-07-26T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4.3</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract32 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract32">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player32"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team3"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-01-27T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2.8</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract33 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract33">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player33"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team3"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-03-09T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1.6</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract34 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract34">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player34"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team4"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-05-27T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1.7</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract35 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract35">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player35"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team4"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-07-03T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4.2</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract36 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract36">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player36"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team4"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-10-25T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1.8</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract37 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract37">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player37"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team4"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-08-16T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1.6</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract38 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract38">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player38"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team4"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-11-12T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2.1</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract39 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract39">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player39"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team4"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-02-11T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1.1</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract4 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract4">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player4"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team1"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-10-07T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4.5</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract40 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract40">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player40"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team4"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-11-25T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3.3</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract41 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract41">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player41"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team4"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-10-22T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4.6</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract42 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract42">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player42"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team4"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-27T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4.7</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract43 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract43">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player43"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team4"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-04-23T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3.9</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract44 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract44">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player44"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team4"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-09-01T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4.7</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract45 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract45">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player45"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team5"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-02-15T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2.6</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract46 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract46">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player46"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team5"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-07-31T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3.7</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract47 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract47">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player47"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team5"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-07-03T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4.8</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract48 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract48">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player48"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team5"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-01-30T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2.8</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract49 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract49">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player49"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team5"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-04-04T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2.4</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract5 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract5">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player5"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team1"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-01-09T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4.6</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract50 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract50">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player50"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team5"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-06-09T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3.2</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract51 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract51">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player51"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team5"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-08-14T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3.3</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract52 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract52">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player52"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team5"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-28T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1.7</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract53 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract53">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player53"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team5"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-09-08T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1.6</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract54 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract54">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player54"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team5"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-07-08T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4.2</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract55 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract55">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player55"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team5"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-03-02T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4.8</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract56 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract56">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player56"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team5"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-06-18T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1.4</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract57 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract57">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player57"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team5"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-08-20T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4.7</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract58 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract58">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player58"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team3"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-10-09T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4.1</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract59 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract59">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player59"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team4"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-01-29T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1.2</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract6 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract6">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player6"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team1"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-04-26T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4.8</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract60 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract60">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player60"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team1"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-06T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1.4</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract61 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract61">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player1"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team1"/>
+        <FootOntologyPlus:ContractEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-01T00:00:00</FootOntologyPlus:ContractEndDate>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-01-01T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3.1</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract62 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract62">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player3"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team1"/>
+        <FootOntologyPlus:ContractEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-06-14T00:00:00</FootOntologyPlus:ContractEndDate>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-06-15T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2.7</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract63 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract63">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player5"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team1"/>
+        <FootOntologyPlus:ContractEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-02-09T00:00:00</FootOntologyPlus:ContractEndDate>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-02-10T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4.0</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract64 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract64">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player6"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team1"/>
+        <FootOntologyPlus:ContractEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-11-30T00:00:00</FootOntologyPlus:ContractEndDate>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2012-12-01T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3.3</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract65 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract65">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player8"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team1"/>
+        <FootOntologyPlus:ContractEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-07-19T00:00:00</FootOntologyPlus:ContractEndDate>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2011-07-20T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2.5</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract66 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract66">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player9"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team1"/>
+        <FootOntologyPlus:ContractEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-03-02T00:00:00</FootOntologyPlus:ContractEndDate>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-03-03T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1.9</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract67 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract67">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player10"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team1"/>
+        <FootOntologyPlus:ContractEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-04T00:00:00</FootOntologyPlus:ContractEndDate>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-06-05T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3.6</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract68 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract68">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player12"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team2"/>
+        <FootOntologyPlus:ContractEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-05-19T00:00:00</FootOntologyPlus:ContractEndDate>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-05-20T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4.4</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract69 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract69">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player14"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team2"/>
+        <FootOntologyPlus:ContractEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-08-09T00:00:00</FootOntologyPlus:ContractEndDate>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2012-08-10T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2.8</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract7 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract7">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player7"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team1"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-09-13T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2.5</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract70 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract70">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player15"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team2"/>
+        <FootOntologyPlus:ContractEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-03-31T00:00:00</FootOntologyPlus:ContractEndDate>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-04-01T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3.0</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract71 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract71">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player17"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team2"/>
+        <FootOntologyPlus:ContractEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-11-14T00:00:00</FootOntologyPlus:ContractEndDate>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2011-11-15T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4.2</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract72 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract72">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player18"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team2"/>
+        <FootOntologyPlus:ContractEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-09-04T00:00:00</FootOntologyPlus:ContractEndDate>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-09-05T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2.4</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract73 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract73">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player19"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team2"/>
+        <FootOntologyPlus:ContractEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-01-21T00:00:00</FootOntologyPlus:ContractEndDate>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-01-22T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1.7</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract74 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract74">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player23"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team3"/>
+        <FootOntologyPlus:ContractEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-05-29T00:00:00</FootOntologyPlus:ContractEndDate>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2012-05-30T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2.9</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract75 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract75">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player24"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team3"/>
+        <FootOntologyPlus:ContractEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-04-19T00:00:00</FootOntologyPlus:ContractEndDate>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-04-20T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3.5</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract76 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract76">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player25"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team3"/>
+        <FootOntologyPlus:ContractEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-11-30T00:00:00</FootOntologyPlus:ContractEndDate>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2011-12-01T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4.1</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract77 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract77">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player27"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team3"/>
+        <FootOntologyPlus:ContractEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-08-14T00:00:00</FootOntologyPlus:ContractEndDate>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-08-15T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2.4</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract78 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract78">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player29"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team3"/>
+        <FootOntologyPlus:ContractEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-10-24T00:00:00</FootOntologyPlus:ContractEndDate>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-10-25T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3.9</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract79 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract79">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player30"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team3"/>
+        <FootOntologyPlus:ContractEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-06-09T00:00:00</FootOntologyPlus:ContractEndDate>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2012-06-10T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4.5</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract8 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract8">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player8"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team1"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-21T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4.1</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract80 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract80">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player34"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team4"/>
+        <FootOntologyPlus:ContractEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-11-04T00:00:00</FootOntologyPlus:ContractEndDate>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-11-05T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3.3</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract81 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract81">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player35"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team4"/>
+        <FootOntologyPlus:ContractEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-01-11T00:00:00</FootOntologyPlus:ContractEndDate>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-01-12T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1.8</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract82 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract82">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player37"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team4"/>
+        <FootOntologyPlus:ContractEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-06-24T00:00:00</FootOntologyPlus:ContractEndDate>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-06-25T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4.3</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract83 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract83">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player38"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team4"/>
+        <FootOntologyPlus:ContractEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-09-14T00:00:00</FootOntologyPlus:ContractEndDate>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-09-15T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2.6</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract84 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract84">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player39"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team4"/>
+        <FootOntologyPlus:ContractEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-03-09T00:00:00</FootOntologyPlus:ContractEndDate>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2012-03-10T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3.8</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract85 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract85">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player41"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team4"/>
+        <FootOntologyPlus:ContractEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-07-31T00:00:00</FootOntologyPlus:ContractEndDate>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-08-01T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1.7</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract86 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract86">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player42"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team4"/>
+        <FootOntologyPlus:ContractEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-02-16T00:00:00</FootOntologyPlus:ContractEndDate>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-02-17T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2.1</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract87 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract87">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player45"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team5"/>
+        <FootOntologyPlus:ContractEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-07-22T00:00:00</FootOntologyPlus:ContractEndDate>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-07-23T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3.7</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract88 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract88">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player46"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team5"/>
+        <FootOntologyPlus:ContractEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-09-30T00:00:00</FootOntologyPlus:ContractEndDate>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2012-10-01T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4.8</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract89 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract89">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player48"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team5"/>
+        <FootOntologyPlus:ContractEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-11-14T00:00:00</FootOntologyPlus:ContractEndDate>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-11-15T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3.2</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract9 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract9">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player9"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team1"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-10-06T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3.9</FootOntologyPlus:ContractValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Contract90 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract90">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
+        <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player54"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team5"/>
+        <FootOntologyPlus:ContractEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-05-29T00:00:00</FootOntologyPlus:ContractEndDate>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-05-30T00:00:00</FootOntologyPlus:ContractStartDate>
+        <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1.7</FootOntologyPlus:ContractValue>
     </owl:NamedIndividual>
     
 
@@ -3009,8 +4083,6 @@
     <!-- http://visualdataweb.org/FootOntologyPlus/Match1 -->
 
     <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Match1">
-        <FootOntologyPlus:hasAwayTeam rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team1"/>
-        <FootOntologyPlus:hasHomeTeam rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team1"/>
         <FootOntologyPlus:IsFriendlyMatch rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</FootOntologyPlus:IsFriendlyMatch>
     </owl:NamedIndividual>
     
@@ -3020,6 +4092,658 @@
 
     <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player1">
         <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1990-02-14T08:23:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">182</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Marco Rossi</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player10 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player10">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1986-06-07T11:25:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">184</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Carl Olsson</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player11 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player11">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1993-04-25T07:10:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">179</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>André Pereira</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player12 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player12">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1982-10-12T14:45:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">177</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Tomáš Novák</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player13 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player13">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1998-12-01T21:35:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">170</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Óscar Hernández</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player14 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player14">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1989-03-22T18:20:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">183</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>David Brown</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player15 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player15">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1994-07-09T02:50:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">181</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Giuseppe Esposito</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player16 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player16">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2002-11-30T15:15:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">175</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Oleg Ivanov</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player17 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player17">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1987-05-17T20:05:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">189</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Jean Dupont</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player18 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player18">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1991-09-28T06:40:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">172</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Mohamed Khalifa</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player19 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player19">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1999-02-13T11:55:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">180</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Jan Kowalski</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player2 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player2">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1985-11-30T19:45:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">175</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Lionel Martínez</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player20 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player20">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1984-08-05T23:10:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">186</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Sergio Silva</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player21 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player21">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1996-10-18T14:25:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">177</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Johan Svensson</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player22 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player22">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1992-05-27T08:00:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">174</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Peter Novak</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player23 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player23">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1988-02-07T17:45:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">187</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Álvaro López</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player24 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player24">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1997-11-14T12:10:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">180</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>David Wilson</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player25 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player25">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2001-01-30T03:50:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">178</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Andrea Bianchi</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player26 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player26">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1986-07-23T19:15:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">183</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Ivan Petrov</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player27 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player27">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1990-04-05T10:30:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">182</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Pierre Martin</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player28 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player28">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1983-11-09T16:40:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">176</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Ahmed Hassan</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player29 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player29">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1994-06-16T05:20:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">179</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Paweł Zieliński</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player3 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player3">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1997-05-02T12:10:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">188</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Jean Dubois</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player30 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player30">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2000-03-08T21:00:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">185</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Lucas Vieira</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player31 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player31">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1985-09-12T13:25:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">180</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Anders Karlsson</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player32 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player32">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1998-01-19T11:55:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">174</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Jens Novak</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player33 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player33">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1993-03-29T07:45:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">177</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Carlos Sánchez</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player34 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player34">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1987-12-04T22:30:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">188</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>James Taylor</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player35 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player35">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1991-06-22T09:10:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">181</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Francesco Romano</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player36 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player36">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2002-10-11T15:55:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">175</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Sergei Smirnov</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player37 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player37">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1984-02-28T19:40:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">182</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Luc Dupuis</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player38 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player38">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1995-08-03T04:20:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">173</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Youssef El‑Sayed</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player39 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player39">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1999-11-20T20:55:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">180</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Marek Lewandowski</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player4 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player4">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1988-07-21T16:05:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">180</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Manuel García</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player40 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player40">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1992-05-16T12:15:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">184</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Rafael Costa</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player41 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player41">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1989-10-27T08:35:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">178</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Mats Larsson</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player42 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player42">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1996-07-01T14:50:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">175</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Martin Černý</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player43 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player43">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1990-01-23T17:30:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">181</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Diego Fernández</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player44 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player44">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1988-09-15T06:05:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">183</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Robert Wilson</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player45 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player45">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1994-04-12T11:45:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">179</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Alessandro Ricci</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player46 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player46">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2001-02-19T22:20:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">176</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Andrei Popov</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player47 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player47">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1993-07-29T13:15:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">180</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>François Bernard</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player48 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player48">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1985-12-06T10:25:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">174</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Abdel Rahman</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player49 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player49">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1998-03-14T18:00:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">182</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Jakub Kamiński</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player5 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player5">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1992-01-11T05:50:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">190</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Michael Smith</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player50 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player50">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1992-11-21T05:30:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">185</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Ricardo Santos</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player51 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player51">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1987-05-02T20:05:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">177</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Per Nilsson</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player52 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player52">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1999-08-30T07:40:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">175</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Jan Šimek</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player53 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player53">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1991-02-17T14:55:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">183</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Manuel Ruiz</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player54 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player54">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1984-06-25T12:10:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">180</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>William Brown</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player55 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player55">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1995-10-03T17:30:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">179</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Roberto Bruno</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player56 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player56">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2002-12-19T09:45:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">176</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Kirill Volkov</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player57 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player57">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1986-03-27T23:15:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">181</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Luc Martin</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player58 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player58">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1997-01-08T11:05:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">174</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Youssef Nasser</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player59 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player59">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1993-07-07T19:50:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">182</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Tomasz Lewandowski</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player6 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player6">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2000-09-15T13:30:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">178</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Lucas Müller</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player60 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player60">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1990-09-16T13:20:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">185</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Thiago Oliveira</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player7 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player7">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1983-12-04T22:15:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">185</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>João Silva</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player8 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player8">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1995-08-28T09:40:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">173</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>David Johansson</FootOntologyPlus:PlayerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Player9 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Player9">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
+        <FootOntologyPlus:PlayerBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2001-03-19T17:55:00</FootOntologyPlus:PlayerBirthdate>
+        <FootOntologyPlus:PlayerHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">176</FootOntologyPlus:PlayerHeight>
+        <FootOntologyPlus:PlayerName>Viktor Petrov</FootOntologyPlus:PlayerName>
     </owl:NamedIndividual>
     
 
@@ -3027,7 +4751,39 @@
     <!-- http://visualdataweb.org/FootOntologyPlus/Team1 -->
 
     <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Team1">
-        <FootOntologyPlus:signsPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract1"/>
+        <FootOntologyPlus:TeamName>Milan</FootOntologyPlus:TeamName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Team2 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Team2">
+        <FootOntologyPlus:TeamName>Inter</FootOntologyPlus:TeamName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Team3 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Team3">
+        <FootOntologyPlus:TeamName>Juventus</FootOntologyPlus:TeamName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Team4 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Team4">
+        <FootOntologyPlus:TeamName>Napoli</FootOntologyPlus:TeamName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Team5 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Team5">
+        <FootOntologyPlus:TeamName>Roma</FootOntologyPlus:TeamName>
     </owl:NamedIndividual>
     
 
