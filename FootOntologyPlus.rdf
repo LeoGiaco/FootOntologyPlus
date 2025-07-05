@@ -156,6 +156,17 @@
     
 
 
+    <!-- http://visualdataweb.org/FootOntologyPlus/hasChampion -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/hasChampion">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Tournament"/>
+        <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://visualdataweb.org/FootOntologyPlus/hasCity -->
 
     <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/hasCity">
@@ -234,6 +245,7 @@
     <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/hasFormation">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/isFormationOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team"/>
         <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/Formation"/>
     </owl:ObjectProperty>
@@ -256,6 +268,18 @@
     <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/hasGoal">
         <rdfs:subPropertyOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasEvent"/>
         <owl:inverseOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/isGoalIn"/>
+        <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/Goal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/hasGoalScored -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/hasGoalScored">
+        <rdfs:subPropertyOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasMatchEvent"/>
+        <owl:inverseOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/scoredByTeam"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team"/>
         <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/Goal"/>
     </owl:ObjectProperty>
     
@@ -793,6 +817,7 @@
 
     <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/isFormationOf">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Formation"/>
         <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team"/>
     </owl:ObjectProperty>
@@ -1028,6 +1053,16 @@
     
 
 
+    <!-- http://visualdataweb.org/FootOntologyPlus/leagueIn -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/leagueIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/League"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/ontology/Country"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://visualdataweb.org/FootOntologyPlus/locatedIn -->
 
     <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/locatedIn">
@@ -1185,15 +1220,6 @@
     
 
 
-    <!-- http://visualdataweb.org/FootOntologyPlus/playsWithFormation -->
-
-    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/playsWithFormation">
-        <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team"/>
-        <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/Formation"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://visualdataweb.org/FootOntologyPlus/receivedBy -->
 
     <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/receivedBy">
@@ -1222,11 +1248,19 @@
     
 
 
-    <!-- http://visualdataweb.org/FootOntologyPlus/scoredBy -->
+    <!-- http://visualdataweb.org/FootOntologyPlus/scoredByPlayer -->
 
-    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/scoredBy">
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/scoredByPlayer">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/scores"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/scoredByTeam -->
+
+    <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/scoredByTeam">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </owl:ObjectProperty>
     
@@ -1235,9 +1269,8 @@
     <!-- http://visualdataweb.org/FootOntologyPlus/scores -->
 
     <owl:ObjectProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/scores">
-        <rdfs:subPropertyOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasMatchEvent"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player"/>
         <rdfs:range rdf:resource="http://visualdataweb.org/FootOntologyPlus/Goal"/>
     </owl:ObjectProperty>
     
@@ -1397,18 +1430,6 @@
     
 
 
-    <!-- http://visualdataweb.org/FootOntologyPlus/Champion -->
-
-    <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/Champion">
-        <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/League"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>The current champion of a League</rdfs:comment>
-        <rdfs:label>champion</rdfs:label>
-        <rdfs:label xml:lang="en">champion</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://visualdataweb.org/FootOntologyPlus/CoachName -->
 
     <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/CoachName">
@@ -1546,11 +1567,21 @@
     <!-- http://visualdataweb.org/FootOntologyPlus/LeagueName -->
 
     <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/LeagueName">
+        <rdfs:subPropertyOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/TournamentName"/>
         <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/League"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>The name of a league</rdfs:comment>
         <rdfs:label>leagueName</rdfs:label>
         <rdfs:label xml:lang="en">leagueName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/MatchAwayTeamScore -->
+
+    <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/MatchAwayTeamScore">
+        <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Match"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     </owl:DatatypeProperty>
     
 
@@ -1563,6 +1594,19 @@
         <rdfs:comment>The date when a match took place</rdfs:comment>
         <rdfs:label>date</rdfs:label>
         <rdfs:label xml:lang="en">date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/MatchHomeTeamScore -->
+
+    <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/MatchHomeTeamScore">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Match"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The final score of a match</rdfs:comment>
+        <rdfs:label>score</rdfs:label>
+        <rdfs:label xml:lang="en">score</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1751,35 +1795,11 @@
     
 
 
-    <!-- http://visualdataweb.org/FootOntologyPlus/Region -->
-
-    <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/Region">
-        <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/League"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>The region or country a league is playing in</rdfs:comment>
-        <rdfs:label>region</rdfs:label>
-        <rdfs:label xml:lang="en">region</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://visualdataweb.org/FootOntologyPlus/Saves -->
 
     <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/Saves">
         <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/PerformanceStats"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://visualdataweb.org/FootOntologyPlus/Score -->
-
-    <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/Score">
-        <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Match"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <rdfs:comment>The final score of a match</rdfs:comment>
-        <rdfs:label>score</rdfs:label>
-        <rdfs:label xml:lang="en">score</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1882,18 +1902,6 @@
     
 
 
-    <!-- http://visualdataweb.org/FootOntologyPlus/TournamentChampion -->
-
-    <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/TournamentChampion">
-        <rdfs:domain rdf:resource="http://visualdataweb.org/FootOntologyPlus/Tournament"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>The champion of a specific tournament</rdfs:comment>
-        <rdfs:label>tournamentChampion</rdfs:label>
-        <rdfs:label xml:lang="en">tournamentChampion</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://visualdataweb.org/FootOntologyPlus/TournamentName -->
 
     <owl:DatatypeProperty rdf:about="http://visualdataweb.org/FootOntologyPlus/TournamentName">
@@ -1967,13 +1975,17 @@
 
     <!-- http://dbpedia.org/ontology/City -->
 
-    <owl:Class rdf:about="http://dbpedia.org/ontology/City"/>
+    <owl:Class rdf:about="http://dbpedia.org/ontology/City">
+        <owl:equivalentClass rdf:resource="http://visualdataweb.org/FootOntologyPlus/City"/>
+    </owl:Class>
     
 
 
     <!-- http://dbpedia.org/ontology/Country -->
 
-    <owl:Class rdf:about="http://dbpedia.org/ontology/Country"/>
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Country">
+        <owl:equivalentClass rdf:resource="http://visualdataweb.org/FootOntologyPlus/Country"/>
+    </owl:Class>
     
 
 
@@ -2045,6 +2057,12 @@
     
 
 
+    <!-- http://visualdataweb.org/FootOntologyPlus/City -->
+
+    <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/City"/>
+    
+
+
     <!-- http://visualdataweb.org/FootOntologyPlus/Coach -->
 
     <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/Coach">
@@ -2085,6 +2103,12 @@
     <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/Corner">
         <rdfs:subClassOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/MatchEvent"/>
     </owl:Class>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Country -->
+
+    <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/Country"/>
     
 
 
@@ -2196,6 +2220,14 @@
     <!-- http://visualdataweb.org/FootOntologyPlus/InconsistentContractDatesError -->
 
     <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/InconsistentContractDatesError">
+        <rdfs:subClassOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/Error"/>
+    </owl:Class>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/InconsistentMatchScoresError -->
+
+    <owl:Class rdf:about="http://visualdataweb.org/FootOntologyPlus/InconsistentMatchScoresError">
         <rdfs:subClassOf rdf:resource="http://visualdataweb.org/FootOntologyPlus/Error"/>
     </owl:Class>
     
@@ -2968,6 +3000,106 @@
     
 
 
+    <!-- http://visualdataweb.org/FootOntologyPlus/Coach1 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Coach1">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Coach"/>
+        <FootOntologyPlus:CoachName>Marco Bellini</FootOntologyPlus:CoachName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Coach2 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Coach2">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Coach"/>
+        <FootOntologyPlus:CoachName>Andrea Cortesi</FootOntologyPlus:CoachName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Coach3 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Coach3">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Coach"/>
+        <FootOntologyPlus:CoachName>Paolo Venturini</FootOntologyPlus:CoachName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Coach4 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Coach4">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Coach"/>
+        <FootOntologyPlus:CoachName>Sergio Almeida</FootOntologyPlus:CoachName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Coach5 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Coach5">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Coach"/>
+        <FootOntologyPlus:CoachName>Mario Rossi</FootOntologyPlus:CoachName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/CoachContract1 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/CoachContract1">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/CoachContract"/>
+        <FootOntologyPlus:involvesCoach rdf:resource="http://visualdataweb.org/FootOntologyPlus/Coach1"/>
+        <FootOntologyPlus:isSignedForCoachBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team1"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-11-02T00:00:00</FootOntologyPlus:ContractStartDate>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/CoachContract2 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/CoachContract2">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/CoachContract"/>
+        <FootOntologyPlus:involvesCoach rdf:resource="http://visualdataweb.org/FootOntologyPlus/Coach2"/>
+        <FootOntologyPlus:isSignedForCoachBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team2"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-11-03T00:00:00</FootOntologyPlus:ContractStartDate>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/CoachContract3 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/CoachContract3">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/CoachContract"/>
+        <FootOntologyPlus:involvesCoach rdf:resource="http://visualdataweb.org/FootOntologyPlus/Coach3"/>
+        <FootOntologyPlus:isSignedForCoachBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team3"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-11-04T00:00:00</FootOntologyPlus:ContractStartDate>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/CoachContract4 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/CoachContract4">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/CoachContract"/>
+        <FootOntologyPlus:involvesCoach rdf:resource="http://visualdataweb.org/FootOntologyPlus/Coach4"/>
+        <FootOntologyPlus:isSignedForCoachBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team4"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-11-05T00:00:00</FootOntologyPlus:ContractStartDate>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/CoachContract5 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/CoachContract5">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/CoachContract"/>
+        <FootOntologyPlus:involvesCoach rdf:resource="http://visualdataweb.org/FootOntologyPlus/Coach5"/>
+        <FootOntologyPlus:isSignedForCoachBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team5"/>
+        <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-11-06T00:00:00</FootOntologyPlus:ContractStartDate>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://visualdataweb.org/FootOntologyPlus/Contract1 -->
 
     <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract1">
@@ -3586,7 +3718,7 @@
     <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Contract56">
         <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Contract"/>
         <FootOntologyPlus:involvesPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player56"/>
-        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team5"/>
+        <FootOntologyPlus:isSignedForPlayerBy rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team2"/>
         <FootOntologyPlus:ContractStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-06-18T00:00:00</FootOntologyPlus:ContractStartDate>
         <FootOntologyPlus:ContractValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1400</FootOntologyPlus:ContractValue>
     </owl:NamedIndividual>
@@ -4079,10 +4211,47 @@
     
 
 
+    <!-- http://visualdataweb.org/FootOntologyPlus/Italy -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Italy">
+        <rdf:type rdf:resource="http://dbpedia.org/ontology/Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/League1 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/League1">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/League"/>
+        <FootOntologyPlus:hasTeam rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team1"/>
+        <FootOntologyPlus:hasTeam rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team2"/>
+        <FootOntologyPlus:hasTeam rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team3"/>
+        <FootOntologyPlus:hasTeam rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team4"/>
+        <FootOntologyPlus:hasTeam rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team5"/>
+        <FootOntologyPlus:LeagueName>Serie Z</FootOntologyPlus:LeagueName>
+        <FootOntologyPlus:NumberOfTeams rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</FootOntologyPlus:NumberOfTeams>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://visualdataweb.org/FootOntologyPlus/Match1 -->
 
     <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Match1">
-        <FootOntologyPlus:IsFriendlyMatch rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</FootOntologyPlus:IsFriendlyMatch>
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Match"/>
+        <FootOntologyPlus:hasGoal rdf:resource="http://visualdataweb.org/FootOntologyPlus/Match1Goal"/>
+        <FootOntologyPlus:hasWinner rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team2"/>
+        <FootOntologyPlus:MatchAwayTeamScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</FootOntologyPlus:MatchAwayTeamScore>
+        <FootOntologyPlus:MatchDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-07-05T20:00:00</FootOntologyPlus:MatchDate>
+        <FootOntologyPlus:MatchHomeTeamScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</FootOntologyPlus:MatchHomeTeamScore>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Match1Goal -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Match1Goal">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/Goal"/>
+        <FootOntologyPlus:scoredByPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player14"/>
     </owl:NamedIndividual>
     
 
@@ -4750,7 +4919,30 @@
     <!-- http://visualdataweb.org/FootOntologyPlus/Team1 -->
 
     <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Team1">
+        <FootOntologyPlus:hasFormation rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team1Formation1"/>
+        <FootOntologyPlus:isHomeTeam rdf:resource="http://visualdataweb.org/FootOntologyPlus/Match1"/>
         <FootOntologyPlus:TeamName>Milan</FootOntologyPlus:TeamName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Team1Formation1 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Team1Formation1">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/442"/>
+        <FootOntologyPlus:hasReservePlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player60"/>
+        <FootOntologyPlus:hasStarterPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player1"/>
+        <FootOntologyPlus:hasStarterPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player10"/>
+        <FootOntologyPlus:hasStarterPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player11"/>
+        <FootOntologyPlus:hasStarterPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player2"/>
+        <FootOntologyPlus:hasStarterPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player3"/>
+        <FootOntologyPlus:hasStarterPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player4"/>
+        <FootOntologyPlus:hasStarterPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player5"/>
+        <FootOntologyPlus:hasStarterPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player6"/>
+        <FootOntologyPlus:hasStarterPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player7"/>
+        <FootOntologyPlus:hasStarterPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player8"/>
+        <FootOntologyPlus:hasStarterPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player9"/>
+        <FootOntologyPlus:isFormationIn rdf:resource="http://visualdataweb.org/FootOntologyPlus/Match1"/>
     </owl:NamedIndividual>
     
 
@@ -4758,7 +4950,30 @@
     <!-- http://visualdataweb.org/FootOntologyPlus/Team2 -->
 
     <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Team2">
+        <FootOntologyPlus:hasFormation rdf:resource="http://visualdataweb.org/FootOntologyPlus/Team2Formation1"/>
+        <FootOntologyPlus:isAwayTeam rdf:resource="http://visualdataweb.org/FootOntologyPlus/Match1"/>
         <FootOntologyPlus:TeamName>Inter</FootOntologyPlus:TeamName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://visualdataweb.org/FootOntologyPlus/Team2Formation1 -->
+
+    <owl:NamedIndividual rdf:about="http://visualdataweb.org/FootOntologyPlus/Team2Formation1">
+        <rdf:type rdf:resource="http://visualdataweb.org/FootOntologyPlus/433"/>
+        <FootOntologyPlus:hasReservePlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player56"/>
+        <FootOntologyPlus:hasStarterPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player12"/>
+        <FootOntologyPlus:hasStarterPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player13"/>
+        <FootOntologyPlus:hasStarterPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player14"/>
+        <FootOntologyPlus:hasStarterPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player15"/>
+        <FootOntologyPlus:hasStarterPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player16"/>
+        <FootOntologyPlus:hasStarterPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player17"/>
+        <FootOntologyPlus:hasStarterPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player18"/>
+        <FootOntologyPlus:hasStarterPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player19"/>
+        <FootOntologyPlus:hasStarterPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player20"/>
+        <FootOntologyPlus:hasStarterPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player21"/>
+        <FootOntologyPlus:hasStarterPlayer rdf:resource="http://visualdataweb.org/FootOntologyPlus/Player22"/>
+        <FootOntologyPlus:isFormationIn rdf:resource="http://visualdataweb.org/FootOntologyPlus/Match1"/>
     </owl:NamedIndividual>
     
 
@@ -5755,6 +5970,126 @@
     <rdf:Description>
         <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
         <rdfs:comment></rdfs:comment>
+        <rdfs:label>AwayFormationRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/isAwayTeam"/>
+                        <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/t"/>
+                        <swrl:argument2 rdf:resource="http://visualdataweb.org/newOntology/m"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasFormation"/>
+                                <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/t"/>
+                                <swrl:argument2 rdf:resource="http://visualdataweb.org/newOntology/f"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/isFormationIn"/>
+                                        <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/f"/>
+                                        <swrl:argument2 rdf:resource="http://visualdataweb.org/newOntology/m"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/isAwayFormationIn"/>
+                        <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/f"/>
+                        <swrl:argument2 rdf:resource="http://visualdataweb.org/newOntology/m"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>HomeFormationRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/isHomeTeam"/>
+                        <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/t"/>
+                        <swrl:argument2 rdf:resource="http://visualdataweb.org/newOntology/m"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasFormation"/>
+                                <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/t"/>
+                                <swrl:argument2 rdf:resource="http://visualdataweb.org/newOntology/f"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/isFormationIn"/>
+                                        <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/f"/>
+                                        <swrl:argument2 rdf:resource="http://visualdataweb.org/newOntology/m"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/isHomeFormationIn"/>
+                        <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/f"/>
+                        <swrl:argument2 rdf:resource="http://visualdataweb.org/newOntology/m"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
         <rdfs:label>PlayerInMatchRule</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
         <swrl:body>
@@ -5793,6 +6128,206 @@
                         <swrl:propertyPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasPlayer"/>
                         <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/m"/>
                         <swrl:argument2 rdf:resource="http://visualdataweb.org/newOntology/p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>InconsistentMatchScoresHomeRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/isHomeTeam"/>
+                        <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/t1"/>
+                        <swrl:argument2 rdf:resource="http://visualdataweb.org/newOntology/m"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/isAwayTeam"/>
+                                <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/t2"/>
+                                <swrl:argument2 rdf:resource="http://visualdataweb.org/newOntology/m"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasWinner"/>
+                                        <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/m"/>
+                                        <swrl:argument2 rdf:resource="http://visualdataweb.org/newOntology/t1"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/MatchHomeTeamScore"/>
+                                                <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/m"/>
+                                                <swrl:argument2 rdf:resource="http://visualdataweb.org/newOntology/s1"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/MatchAwayTeamScore"/>
+                                                        <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/m"/>
+                                                        <swrl:argument2 rdf:resource="http://visualdataweb.org/newOntology/s2"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThanOrEqual"/>
+                                                                <swrl:arguments rdf:parseType="Collection">
+                                                                    <rdf:Description rdf:about="http://visualdataweb.org/newOntology/s1"/>
+                                                                    <rdf:Description rdf:about="http://visualdataweb.org/newOntology/s2"/>
+                                                                </swrl:arguments>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/InconsistentMatchScoresError"/>
+                        <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/m"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>InconsistentMatchScoresAwayRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/isHomeTeam"/>
+                        <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/t1"/>
+                        <swrl:argument2 rdf:resource="http://visualdataweb.org/newOntology/m"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/isAwayTeam"/>
+                                <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/t2"/>
+                                <swrl:argument2 rdf:resource="http://visualdataweb.org/newOntology/m"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/hasWinner"/>
+                                        <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/m"/>
+                                        <swrl:argument2 rdf:resource="http://visualdataweb.org/newOntology/t2"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/MatchHomeTeamScore"/>
+                                                <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/m"/>
+                                                <swrl:argument2 rdf:resource="http://visualdataweb.org/newOntology/s1"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/MatchAwayTeamScore"/>
+                                                        <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/m"/>
+                                                        <swrl:argument2 rdf:resource="http://visualdataweb.org/newOntology/s2"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThanOrEqual"/>
+                                                                <swrl:arguments rdf:parseType="Collection">
+                                                                    <rdf:Description rdf:about="http://visualdataweb.org/newOntology/s2"/>
+                                                                    <rdf:Description rdf:about="http://visualdataweb.org/newOntology/s1"/>
+                                                                </swrl:arguments>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://visualdataweb.org/FootOntologyPlus/InconsistentMatchScoresError"/>
+                        <swrl:argument1 rdf:resource="http://visualdataweb.org/newOntology/m"/>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
