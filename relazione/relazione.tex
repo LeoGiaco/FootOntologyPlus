@@ -57,6 +57,35 @@
 \usepackage{biblatex} %Imports biblatex package
 \bibliography{citations} %Import the bibliography file
 
+\setlength{\parindent}{0cm}
+
+\usepackage{listings}
+\usepackage{color}
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+
+\lstdefinelanguage{SWRL}{
+  keywords={},
+  otherkeywords={^, ->},
+  keywordstyle=\color{blue}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  breakatwhitespace=true
+}
+
+\lstset{
+   backgroundcolor=\color{lightgray},
+   extendedchars=true,
+   basicstyle=\footnotesize\ttfamily,
+   showstringspaces=false,
+   showspaces=false,
+   numbers=none,
+   tabsize=2,
+   breaklines=true,
+   showtabs=false,
+   captionpos=b
+}
 %%% END Article customizations
 
 %%% The "real" document content comes below...
@@ -88,6 +117,172 @@ Citazione \cite{test}
 \chapter{Inserimento di individui}
 
 \chapter{Regole SWRL}
+
+\textbf{SWRL} (\textbf{Semantic Web Rule Language}) è un linguaggio usato nell'ambito del Semantic Web per esprimere regole di inferenza e vincoli logici più complessi di quelli realizzabili usando il solo OWL.
+
+\hfill
+
+Nella nostra ontologia abbiamo inserito numerose regole, utili a:
+
+\begin{enumerate}
+    \item inferire nuovi collegamenti tra i dati
+    \item individuare casi di errore sui dati
+\end{enumerate}
+
+Le sezioni che seguono riportano tali regole, non in un ordine particolare.
+
+\section{HomeFormationRule}
+
+Questa regola "raffina" il collegamento tra una formazione e una partita, esplicitando che la prima è usata dalla squadra in casa.
+Questo perché \texttt{isAwayFormationIn} è una sottoproprietà di \texttt{isFormationIn}.
+
+\begin{lstlisting}[language=SWRL]
+isHomeTeam(?t, ?m) ^ hasFormation(?t, ?f) ^ isFormationIn(?f, ?m) -> isHomeFormationIn(?f, ?m)
+\end{lstlisting}
+
+\section{AwayFormationRule}
+
+Questa regola funziona in modo analogo alla precedente, ma riguardo la squadra in trasferta.
+
+\begin{lstlisting}[language=SWRL]
+isAwayTeam(?t, ?m) ^ hasFormation(?t, ?f) ^ isFormationIn(?f, ?m) -> isAwayFormationIn(?f, ?m)
+\end{lstlisting}
+
+\newpage
+
+\section{DuplicateSubstituteRule}
+
+Questa regola verifica se un giocatore segnato come riserva partecipa a multiple sostituzioni come giocatore entrante, e in tale caso gli assegna una classe di errore.
+
+\begin{lstlisting}[language=SWRL]
+hasReservePlayer(?f, ?p) ^ hasEnteringPlayer(?s1, ?p) ^ hasEnteringPlayer(?s2, ?p) ^ differentFrom(?s1, ?s2) ^ hasTeamFormation(?m, ?f) ^ hasSubstitution(?m, ?s1) ^ hasSubstitution(?m, ?s2) -> DuplicateSubstituteError(?p)
+\end{lstlisting}
+
+\section{DuplicateSubstitutedRule}
+
+Il funzionamento di questa regola è analogo alla precedente, ma riguardante il giocatore uscente.
+Questa regola copre però solo i giocatori titolari (ovvero i giocatori che partecipano alla partita dall'inizio).
+
+\begin{lstlisting}[language=SWRL]
+hasStarterPlayer(?f, ?p) ^ hasExitingPlayer(?s1, ?p) ^ hasExitingPlayer(?s2, ?p) ^ differentFrom(?s1, ?s2) ^ hasTeamFormation(?m, ?f) ^ hasSubstitution(?m, ?s1) ^ hasSubstitution(?m, ?s2) -> DuplicateSubstitutedError(?p)
+\end{lstlisting}
+
+\section{StarterAsSubstituteRule}
+
+Questa regola verifica se un giocatore titolare è il giocatore entrante in una sostituzione, e in tale caso gli assegna una classe di errore.
+
+\begin{lstlisting}[language=SWRL]
+hasStarterPlayer(?f, ?p) ^ hasEnteringPlayer(?s, ?p) ^ hasTeamFormation(?m, ?t) ^ hasSubstitution(?m, ?s) -> StarterAsSubstituteError(?p)
+\end{lstlisting}
+
+\section{FriendlyMatchInTournamentRule}
+
+Non è corretto assegnare una partita amichevole ad un torneo, qualsiasi sia il suo tipo, e se ciò viene fatto allora una classe di errore è assegnata alla partita. 
+
+\begin{lstlisting}[language=SWRL]
+includedInTournament(?m, ?t) ^ FriendlyMatch(?m) -> FriendlyMatchInTournamentError(?m)
+\end{lstlisting}
+
+\section{GoalScoredByTeamRule}
+
+Questa regola collega un goal ad una squadra, sapendo che il goal è stato fatto da un giocatore che giocava in tale squadra nella partita.
+
+\begin{lstlisting}[language=SWRL]
+scores(?p, ?g) ^ hasEvent(?m, ?g) ^ isPlayerInFormation(?p, ?f) ^ hasFormation(?t, ?f) ^ competesIn(?t, ?m) -> scoredByTeam(?g, ?t)
+\end{lstlisting}
+
+\section{InconsistentBallPossessionInMatchRule}
+
+Questa regola controlla se la somma del possesso palla indicata nelle statistiche di performance per le squadre che hanno giocato una partita non è 100\%, e in tale caso assegna una classe di errore alla partita e alle statistiche.
+
+\begin{lstlisting}[language=SWRL]
+teamStatsIn(?ps1, ?m) ^ teamStatsIn(?ps2, ?m) ^ differentFrom(?ps1, ?ps2) ^ BallPossession(?ps1, ?p1) ^ BallPossession(?ps2, ?p2) ^ swrlb:add(?r, ?p1, ?p2) ^ swrlb:notEqual(?r, 100) -> InconsistentBallPossessionInMatchError(?m) ^ InconsistentBallPossessionInMatchError(?ps1) ^ InconsistentBallPossessionInMatchError(?ps2)
+\end{lstlisting}
+
+\section{InconsistentContractDatesRule}
+
+Questa regola verifica se le date di un contratto sono inconsistenti (data di inizio futura alla data di fine).
+
+\begin{lstlisting}[language=SWRL]
+ContractStartDate(?c, ?sd) ^ ContractEndDate(?c, ?ed) ^ temporal:before(?ed, ?sd) -> InconsistentContractDatesError(?c)
+\end{lstlisting}
+
+\section{InconsistentMatchScoresHome/AwayRule}
+
+Queste due regole verificano se il vincitore di una partita non è consistente con i punteggi assegnati alle due squadre.
+Sono state necessarie due regole in quanto i punteggi delle squadre sono legati alla partita e non direttamente alle squadre.
+
+\begin{lstlisting}[language=SWRL]
+isHomeTeam(?t1, ?m) ^ isAwayTeam(?t2, ?m) ^ hasWinner(?m, ?t1) ^ MatchHomeTeamScore(?m, ?s1) ^ MatchAwayTeamScore(?m, ?s2) ^ swrlb:lessThanOrEqual(?s1, ?s2) -> InconsistentMatchScoresError(?m)
+\end{lstlisting}
+
+\begin{lstlisting}[language=SWRL]
+isHomeTeam(?t1, ?m) ^ isAwayTeam(?t2, ?m) ^ hasWinner(?m, ?t2) ^ MatchHomeTeamScore(?m, ?s1) ^ MatchAwayTeamScore(?m, ?s2) ^ swrlb:lessThanOrEqual(?s2, ?s1) -> InconsistentMatchScoresError(?m)
+\end{lstlisting}
+
+\section{InvalidLeagueMatchFormatExtraTime/PenaltyRule}
+
+Le partite che fanno parte di una lega non possono avere supplementari o rigori, e queste due regole servono a identificare tali inconsistenze.
+
+\begin{lstlisting}[language=SWRL]
+includedInTournament(?m, ?t) ^ League(?t) ^ ExtraTimePlayed(?m, true) -> InvalidLeagueMatchFormatError(?m)
+\end{lstlisting}
+
+\begin{lstlisting}[language=SWRL]
+includedInTournament(?m, ?t) ^ League(?t) ^ PenaltyShootoutPlayed(?m, true) -> InvalidLeagueMatchFormatError(?m)
+\end{lstlisting}
+
+\section{InvalidMatchRule}
+
+Questa regola verifica se una squadra sta giocando contro sé stessa in una partita.
+
+\begin{lstlisting}[language=SWRL]
+hasHomeTeam(?m, ?t) ^ hasAwayTeam(?m, ?t) -> InvalidMatchError(?m)
+\end{lstlisting}
+
+\section{MultipleRedCardsRule}
+
+Questa regola controlla se un giocatore ha ricevuto multipli cartellini rossi in una partita.
+
+\begin{lstlisting}[language=SWRL]
+hasReceived(?p, ?c1) ^ hasReceived(?p, ?c2) ^ RedCard(?c1) ^ RedCard(?c2) ^ differentFrom(?c1, ?c2) ^ hasEvent(?m, ?c1) ^ hasEvent(?m, ?c2) -> MultipleRedCardsError(?p)
+\end{lstlisting}
+
+\section{NonGoalKeeperWithSavesRule}
+
+Questa regola verifica se le statistiche di un giocatore indicano il numero di parate sebbene esso non abbia giocato come portiere nella partita.
+
+\begin{lstlisting}[language=SWRL]
+playsInPosition(?pl, ?p) ^ Outfield(?p) ^ hasPlayerStats(?pl, ?ps) ^ Saves(?ps, ?s) ^ hasPlayer(?m, ?p) ^ hasPlayerPerformanceStats(?m, ?ps) -> NonGoalKeeperWithSavesError(?pl)
+\end{lstlisting}
+
+\section{PlayerInMatchRule}
+
+Questa regola collega un giocatore ad una partita, sapendo che il giocatore era in una formazione utilizzata in tale partita.
+
+\begin{lstlisting}[language=SWRL]
+hasPlayerInFormation(?f, ?p) ^ isFormationIn(?f, ?m) -> hasPlayer(?m, ?p)
+\end{lstlisting}
+
+\section{TeamNotInMatchRule}
+
+Questa regola controlla se un evento in una partita è legato ad una squadra che non gioca in tale partita.
+
+\begin{lstlisting}[language=SWRL]
+hasEvent(?m, ?e) ^ hasMatchEvent(?t, ?e) ^ isHomeTeam(?t1, ?m) ^ isAwayTeam(?t2, ?m) ^ differentFrom(?t, ?t1) ^ differentFrom(?t, ?t2) -> TeamNotInMatchError(?t)
+\end{lstlisting}
+
+\newpage
+
+\section{UncontractedPlayerInMatchRule}
+
+Questa regola verifica se un giocatore ha partecipato ad una partita senza far parte di una delle due squadre coinvolte, in quanto non si trovava sotto contratto con una delle due squadre al momento della partita.
+La regola copre soltanto i casi in cui il giocatore si trovava sotto contratto con un'altra squadra e se il contratto è terminato.
+
+\begin{lstlisting}[language=SWRL]
+signs(?t1, ?c) ^ involvesPlayer(?c, ?p) ^ participatesIn(?p, ?m) ^ includes(?m, ?t2) ^ includes(?m, ?t3) ^ differentFrom(?t1, ?t2) ^ differentFrom(?t1, ?t3) ^ ContractStartDate(?c, ?sd) ^ ContractEndDate(?c, ?ed) ^ MatchDate(?m, ?d) ^ temporal:before(?sd, ?d) ^ temporal:after(?ed, ?d) -> UncontractedPlayerInMatchError(?p)
+\end{lstlisting}
+
 
 \chapter{Interrogazioni SPARQL}
 
