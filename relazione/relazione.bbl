@@ -1,0 +1,55 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{test}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=370363d927113576833fa72258f742d9}{%
+           family={Rossi},
+           familyi={R\bibinitperiod},
+           given={Mario},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{370363d927113576833fa72258f742d9}
+      \strng{fullhash}{370363d927113576833fa72258f742d9}
+      \strng{fullhashraw}{370363d927113576833fa72258f742d9}
+      \strng{bibnamehash}{370363d927113576833fa72258f742d9}
+      \strng{authorbibnamehash}{370363d927113576833fa72258f742d9}
+      \strng{authornamehash}{370363d927113576833fa72258f742d9}
+      \strng{authorfullhash}{370363d927113576833fa72258f742d9}
+      \strng{authorfullhashraw}{370363d927113576833fa72258f742d9}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{licensed under CC BY 4.0}
+      \field{title}{Citazione di test}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://example.com
+      \endverb
+      \verb{url}
+      \verb https://example.com
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

@@ -1,0 +1,15 @@
+[0] Config.pm:308> INFO - This is Biber 2.20
+[0] Config.pm:311> INFO - Logfile is 'relazione.blg'
+[84] biber:340> INFO - === gio lug 10, 2025, 16:10:53
+[99] Biber.pm:420> INFO - Reading 'relazione.bcf'
+[163] Biber.pm:994> INFO - Found 1 citekeys in bib section 0
+[176] Biber.pm:4463> INFO - Processing section 0
+[186] Biber.pm:4654> INFO - Looking for bibtex file 'citations.bib' for section 0
+[187] bibtex.pm:1713> INFO - LaTeX decoding ...
+[189] bibtex.pm:1519> INFO - Found BibTeX data source 'citations.bib'
+[221] UCollate.pm:68> INFO - Overriding locale 'it-IT' defaults 'variable = shifted' with 'variable = non-ignorable'
+[221] UCollate.pm:68> INFO - Overriding locale 'it-IT' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[221] Biber.pm:4283> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'it-IT'
+[221] Biber.pm:4289> INFO - No sort tailoring available for locale 'it-IT'
+[227] bbl.pm:676> INFO - Writing 'relazione.bbl' with encoding 'UTF-8'
+[228] bbl.pm:779> INFO - Output to relazione.bbl

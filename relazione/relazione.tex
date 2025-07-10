@@ -4,7 +4,7 @@
 % This is a simple template for a LaTeX document using the "article" class.
 % See "book", "report", "letter" for other types of document.
 
-\documentclass[11pt]{article} % use larger type; default would be 10pt
+\documentclass[11pt]{report} % use larger type; default would be 10pt
 
 \usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
 
@@ -49,24 +49,52 @@
 \renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
 \renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
 
+\usepackage[hidelinks]{hyperref}
+\usepackage{float}
+
+\usepackage[italian]{babel}
+
+\usepackage{biblatex} %Imports biblatex package
+\bibliography{citations} %Import the bibliography file
+
 %%% END Article customizations
 
 %%% The "real" document content comes below...
 
 \title{FootOntologyPlus}
 \author{The Author}
-%\date{} % Activate to display a given date or no date (if empty),
+\author{The Authors}
+\date{} % Activate to display a given date or no date (if empty),
          % otherwise the current date is printed 
 
 \begin{document}
 \maketitle
 
-\section{First section}
+\newpage
 
-Your text goes here.
+\renewcommand*\contentsname{Indice}
 
-\subsection{A subsection}
+\tableofcontents
+\newpage
 
-More text.
+\chapter{Introduzione}
+
+Citazione \cite{test}
+
+\chapter{Ontologia di partenza}
+
+\chapter{Modifiche all'ontologia}
+
+\chapter{Inserimento di individui}
+
+\chapter{Regole SWRL}
+
+\chapter{Interrogazioni SPARQL}
+
+\chapter{Conclusioni}
+
+\medspace
+
+\printbibliography
 
 \end{document}
