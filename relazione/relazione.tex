@@ -86,6 +86,10 @@
    showtabs=false,
    captionpos=b
 }
+
+\usepackage{graphicx}
+\graphicspath{ {./} }
+
 %%% END Article customizations
 
 %%% The "real" document content comes below...
@@ -283,8 +287,133 @@ La regola copre soltanto i casi in cui il giocatore si trovava sotto contratto c
 signs(?t1, ?c) ^ involvesPlayer(?c, ?p) ^ participatesIn(?p, ?m) ^ includes(?m, ?t2) ^ includes(?m, ?t3) ^ differentFrom(?t1, ?t2) ^ differentFrom(?t1, ?t3) ^ ContractStartDate(?c, ?sd) ^ ContractEndDate(?c, ?ed) ^ MatchDate(?m, ?d) ^ temporal:before(?sd, ?d) ^ temporal:after(?ed, ?d) -> UncontractedPlayerInMatchError(?p)
 \end{lstlisting}
 
-
 \chapter{Interrogazioni SPARQL}
+
+L'ultima parte del progetto è stata la realizzazione di interrogazioni usando \textbf{SPARQL} (\textbf{SPARQL Protocol and RDF Query Language}), un linguaggio simile a SQL per poter estrarre dati dall'ontologia.
+
+\hfill
+
+Le interrogazioni che abbiamo scritto sono esempi che producono risultati sulla base degli individui d'esempio che abbiamo predisposto. 
+Per realizzarle abbiamo usato le viste \textbf{SPARQL Query} e \textbf{Snap SPARQL Query} di Protegé. 
+
+\section{Interrogazione sui contratti di un giocatore}
+
+Questa interrogazione recupera i contratti firmati da un giocatore (nell'esempio \texttt{Player1}) e i nomi dei team per cui i contratti sono stati firmati. 
+
+\begin{lstlisting}
+PREFIX : <http://visualdataweb.org/FootOntologyPlus/>
+
+SELECT ?contract ?teamName
+WHERE { 
+    ?team :signsPlayer ?contract ;
+          :TeamName ?teamName .
+    ?contract :involvesPlayer :Player1 .
+}
+\end{lstlisting}
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{query1}
+	\caption{Risultato della query sulla nostra ontologia.}
+\end{figure}
+
+\newpage
+
+\section{Interrogazione sui contratti non terminati}
+
+Questa interrogazione recupera tutti i contratti che non hanno una data di terminazione. Si assume in questo caso che tali contratti siano ancora attivi, ma in generale vige la "Open World assumption" riguardo alle informazioni mancanti.
+
+\begin{lstlisting}
+PREFIX : <http://visualdataweb.org/FootOntologyPlus/>
+
+SELECT ?player ?team ?contract ?startDate
+WHERE { 
+    ?contract :isSignedForPlayerBy ?team ;
+        :involvesPlayer ?player ;
+        :ContractStartDate ?startDate .
+    FILTER NOT EXISTS { ?contract :ContractEndDate ?endDate }
+}
+ORDER BY ASC (?player)
+\end{lstlisting}
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{query2}
+	\caption{Parte del risultato della query sulla nostra ontologia.}
+\end{figure}
+
+\section{Interrogazione sui cartellini ricevuti dai giocatori}
+
+Questa interrogazione recupera le informazioni riguardanti i cartellini ricevuti dai giocatori, nello specifico il tipo di cartellino, la partita e il minuto di gioco in cui è stato ricevuto. 
+
+\begin{lstlisting}
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX : <http://visualdataweb.org/FootOntologyPlus/>
+
+SELECT ?player ?cardType ?match ?minute
+WHERE {
+    ?player :hasReceived ?card .
+    ?card :MinuteOfEvent ?minute ;
+        :isEventIn ?match ;
+        rdf:type ?cardType .
+    ?cardType rdfs:subClassOf :Card .
+    FILTER (?cardType != :Card) .
+}
+ORDER BY ASC (?player)
+\end{lstlisting}
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{query3}
+	\caption{Risultato della query sulla nostra ontologia.}
+\end{figure}
+
+\section{Interrogazione sulle sostituzioni effettuate in una partita}
+
+Questa interrogazione le informazioni riguardanti le sostituzioni effettuate in una partita (nell'esempio \texttt{Match1}), nello specifico il nome dei giocatori coinvolti e il minuto di gioco. 
+
+\begin{lstlisting}
+PREFIX : <http://visualdataweb.org/FootOntologyPlus/>
+
+SELECT ?enteringName ?exitingName ?minute
+WHERE {
+    ?sub :isSubstitutionIn :Match1 ;
+        :hasEnteringPlayer ?entering ;
+        :hasExitingPlayer ?exiting ;
+        :MinuteOfEvent ?minute .
+    ?entering :FullName ?enteringName .
+    ?exiting :FullName ?exitingName .
+}
+ORDER BY ASC (?minute)
+\end{lstlisting}
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{query4}
+	\caption{Risultato della query sulla nostra ontologia.}
+\end{figure}
+
+\section{Interrogazione sui goal segnati dai giocatori}
+
+Questa interrogazione recupera il numero di goal segnati da ogni giocatore in un torneo (nell'esemptio \texttt{League1}).
+
+\begin{lstlisting}
+PREFIX : <http://visualdataweb.org/FootOntologyPlus/>
+
+SELECT ?player ?playerName (COUNT(?goal) as ?totalGoals) 
+WHERE {
+    ?match :includedInTournament :League1 ;
+        :hasGoal ?goal .
+    ?goal :scoredByPlayer ?player .
+    ?player :FullName ?playerName
+}
+GROUP BY ?player ?playerName
+ORDER BY DESC (?totalGoals)
+\end{lstlisting}
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{query5}
+	\caption{Risultato della query sulla nostra ontologia. Il nome dell'individuo giocatore è incluso in caso di omonimi.}
+\end{figure}
+
+
 
 \chapter{Conclusioni}
 
