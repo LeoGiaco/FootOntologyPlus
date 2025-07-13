@@ -19,34 +19,17 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global/global}
-    \entry{test}{online}{}{}
-      \name{author}{1}{}{%
-        {{hash=370363d927113576833fa72258f742d9}{%
-           family={Rossi},
-           familyi={R\bibinitperiod},
-           given={Mario},
-           giveni={M\bibinitperiod}}}%
-      }
-      \strng{namehash}{370363d927113576833fa72258f742d9}
-      \strng{fullhash}{370363d927113576833fa72258f742d9}
-      \strng{fullhashraw}{370363d927113576833fa72258f742d9}
-      \strng{bibnamehash}{370363d927113576833fa72258f742d9}
-      \strng{authorbibnamehash}{370363d927113576833fa72258f742d9}
-      \strng{authornamehash}{370363d927113576833fa72258f742d9}
-      \strng{authorfullhash}{370363d927113576833fa72258f742d9}
-      \strng{authorfullhashraw}{370363d927113576833fa72258f742d9}
-      \field{sortinit}{R}
-      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
-      \field{labelnamesource}{author}
+    \entry{foot}{online}{}{}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
       \field{labeltitlesource}{title}
       \field{note}{licensed under CC BY 4.0}
-      \field{title}{Citazione di test}
-      \field{year}{2025}
+      \field{title}{Footology}
       \verb{urlraw}
-      \verb https://example.com
+      \verb https://github.com/arditb1997/footology
       \endverb
       \verb{url}
-      \verb https://example.com
+      \verb https://github.com/arditb1997/footology
       \endverb
     \endentry
   \enddatalist

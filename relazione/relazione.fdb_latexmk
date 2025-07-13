@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber relazione"] 1752245590.09178 "relazione.bcf" "relazione.bbl" "relazione" 1752247920.02176 0
-  "citations.bib" 1752156543.19431 151 b07b9b702e28e612e249acd7957a9857 ""
-  "relazione.bcf" 1752247919.93353 108535 6467d7b8a26b98c8b2ae35a682cf9714 "pdflatex"
+["biber relazione"] 1752420067.72953 "relazione.bcf" "relazione.bbl" "relazione" 1752422009.62971 0
+  "citations.bib" 1752420013.63517 122 ad5738a9ff4da7f14b3d8202fd3d729b ""
+  "relazione.bcf" 1752422009.52852 108535 a5fab53f9b488b9ac1c907a167c6a2c5 "pdflatex"
   (generated)
   "relazione.bbl"
   "relazione.blg"
   (rewritten before read)
-["pdflatex"] 1752247918.66987 "/home/leo/Documenti/Uni/2o Anno/Web Semantico/FootOntologyPlus/relazione/relazione.tex" "relazione.pdf" "relazione" 1752247920.02209 0
-  "/home/leo/Documenti/Uni/2o Anno/Web Semantico/FootOntologyPlus/relazione/relazione.tex" 1752247918.43351 16004 d48e7b09253ef080f2bbade85b8bbafc ""
+["pdflatex"] 1752422008.16947 "/home/leo/Documenti/Uni/2o Anno/Web Semantico/FootOntologyPlus/relazione/relazione.tex" "relazione.pdf" "relazione" 1752422009.6302 0
+  "/home/leo/Documenti/Uni/2o Anno/Web Semantico/FootOntologyPlus/relazione/relazione.tex" 1752422005.17846 16894 22a8b6df07820d5ae4e552ac3fe86c89 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -30,6 +30,7 @@
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1136768653 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm" 1136768653 768 1321e9409b4137d6fb428ac9dc956269 ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm" 1136768653 772 9a936b7f5e2ff0557fce0f62822f0bbf ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmtt9.tfm" 1136768653 764 c98a2af25c99b73a368cf7336e255190 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1248133631 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb" 1248133631 32001 6aeea3afe875097b1eb0da29acd61e28 ""
@@ -40,6 +41,7 @@
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb" 1248133631 24416 36515493f76659302880e2604105b074 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1248133631 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb" 1248133631 31099 c85edf1dd5b9e826d67c9c7293b6786c ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb" 1248133631 24252 1e4e051947e12dfb50fee0b7f4e26e3a ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb" 1248133631 29078 718ea4567ceff944262b0f5b0800e1d9 ""
   "/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2025/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1575674566 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
@@ -132,12 +134,12 @@
   "query3.png" 1752246002.32708 6925 2cd4123fb4198d7f6c2ed839848d0c9c ""
   "query4.png" 1752246437.59565 7415 2de113b4a86d4daeea407f8e1e8d4204 ""
   "query5.png" 1752246519.9837 9940 e3fc4c86aade7b4ddd437e9b0ddc58e2 ""
-  "relazione.aux" 1752247919.92953 5700 265ee11d370d2c3a477f8cf1f8c5d092 "pdflatex"
-  "relazione.bbl" 1752245595.61885 1719 0b67ffef70f70bf07624a2d108c1edc7 "biber relazione"
-  "relazione.out" 1752247919.93253 5568 906939eee9461650bbe00d4f9028a6d8 "pdflatex"
-  "relazione.run.xml" 1752247919.93453 2339 bd90cae2df977d5540243eab2f2669ec "pdflatex"
-  "relazione.tex" 1752247918.43351 16004 d48e7b09253ef080f2bbade85b8bbafc ""
-  "relazione.toc" 1752247919.93453 2592 d71a5dea09e8a1b61770379316b40abc "pdflatex"
+  "relazione.aux" 1752422009.52352 5700 85a1065aceecb2b7f623ec79575dcbda "pdflatex"
+  "relazione.bbl" 1752420068.82887 980 3b9109509407472a7eab7dd9a11d2be4 "biber relazione"
+  "relazione.out" 1752422009.52752 5568 906939eee9461650bbe00d4f9028a6d8 "pdflatex"
+  "relazione.run.xml" 1752422009.52952 2339 bd90cae2df977d5540243eab2f2669ec "pdflatex"
+  "relazione.tex" 1752422005.17846 16894 22a8b6df07820d5ae4e552ac3fe86c89 ""
+  "relazione.toc" 1752422009.53052 2592 d71a5dea09e8a1b61770379316b40abc "pdflatex"
   (generated)
   "relazione.aux"
   "relazione.bcf"
