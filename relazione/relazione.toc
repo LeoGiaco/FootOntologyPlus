@@ -2,30 +2,35 @@
 \babel@toc {italian}{}\relax 
 \contentsline {chapter}{\numberline {1}Introduzione}{3}{chapter.1}%
 \contentsline {chapter}{\numberline {2}Ontologia di partenza}{4}{chapter.2}%
-\contentsline {chapter}{\numberline {3}Modifiche all'ontologia}{5}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Inserimento di individui}{6}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Regole SWRL}{7}{chapter.5}%
-\contentsline {section}{\numberline {5.1}HomeFormationRule}{7}{section.5.1}%
-\contentsline {section}{\numberline {5.2}AwayFormationRule}{7}{section.5.2}%
-\contentsline {section}{\numberline {5.3}DuplicateSubstituteRule}{8}{section.5.3}%
-\contentsline {section}{\numberline {5.4}DuplicateSubstitutedRule}{8}{section.5.4}%
-\contentsline {section}{\numberline {5.5}StarterAsSubstituteRule}{8}{section.5.5}%
-\contentsline {section}{\numberline {5.6}FriendlyMatchInTournamentRule}{8}{section.5.6}%
-\contentsline {section}{\numberline {5.7}GoalScoredByTeamRule}{8}{section.5.7}%
-\contentsline {section}{\numberline {5.8}InconsistentBallPossessionInMatchRule}{9}{section.5.8}%
-\contentsline {section}{\numberline {5.9}InconsistentContractDatesRule}{9}{section.5.9}%
-\contentsline {section}{\numberline {5.10}InconsistentMatchScoresHome/AwayRule}{9}{section.5.10}%
-\contentsline {section}{\numberline {5.11}InvalidLeagueMatchFormatExtraTime/PenaltyRule}{9}{section.5.11}%
-\contentsline {section}{\numberline {5.12}InvalidMatchRule}{10}{section.5.12}%
-\contentsline {section}{\numberline {5.13}MultipleRedCardsRule}{10}{section.5.13}%
-\contentsline {section}{\numberline {5.14}NonGoalKeeperWithSavesRule}{10}{section.5.14}%
-\contentsline {section}{\numberline {5.15}PlayerInMatchRule}{10}{section.5.15}%
-\contentsline {section}{\numberline {5.16}TeamNotInMatchRule}{10}{section.5.16}%
-\contentsline {section}{\numberline {5.17}UncontractedPlayerInMatchRule}{11}{section.5.17}%
-\contentsline {chapter}{\numberline {6}Interrogazioni SPARQL}{12}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Interrogazione sui contratti di un giocatore}{12}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Interrogazione sui contratti non terminati}{13}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Interrogazione sui cartellini ricevuti dai giocatori}{13}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Interrogazione sulle sostituzioni effettuate in una partita}{14}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Interrogazione sui goal segnati dai giocatori}{14}{section.6.5}%
-\contentsline {chapter}{\numberline {7}Conclusioni}{16}{chapter.7}%
+\contentsline {section}{\numberline {2.1}Informazioni di base}{4}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Dettagli dell'ontologia}{4}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Classi dell'ontologia}{4}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Proprietà importanti}{5}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Ontologie incluse}{7}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Modifiche all'ontologia}{8}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Inserimento di individui}{9}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Regole SWRL}{10}{chapter.5}%
+\contentsline {section}{\numberline {5.1}HomeFormationRule}{10}{section.5.1}%
+\contentsline {section}{\numberline {5.2}AwayFormationRule}{10}{section.5.2}%
+\contentsline {section}{\numberline {5.3}DuplicateSubstituteRule}{11}{section.5.3}%
+\contentsline {section}{\numberline {5.4}DuplicateSubstitutedRule}{11}{section.5.4}%
+\contentsline {section}{\numberline {5.5}StarterAsSubstituteRule}{11}{section.5.5}%
+\contentsline {section}{\numberline {5.6}FriendlyMatchInTournamentRule}{11}{section.5.6}%
+\contentsline {section}{\numberline {5.7}GoalScoredByTeamRule}{11}{section.5.7}%
+\contentsline {section}{\numberline {5.8}InconsistentBallPossessionInMatchRule}{12}{section.5.8}%
+\contentsline {section}{\numberline {5.9}InconsistentContractDatesRule}{12}{section.5.9}%
+\contentsline {section}{\numberline {5.10}InconsistentMatchScoresHome/AwayRule}{12}{section.5.10}%
+\contentsline {section}{\numberline {5.11}InvalidLeagueMatchFormatExtraTime/PenaltyRule}{12}{section.5.11}%
+\contentsline {section}{\numberline {5.12}InvalidMatchRule}{13}{section.5.12}%
+\contentsline {section}{\numberline {5.13}MultipleRedCardsRule}{13}{section.5.13}%
+\contentsline {section}{\numberline {5.14}NonGoalKeeperWithSavesRule}{13}{section.5.14}%
+\contentsline {section}{\numberline {5.15}PlayerInMatchRule}{13}{section.5.15}%
+\contentsline {section}{\numberline {5.16}TeamNotInMatchRule}{13}{section.5.16}%
+\contentsline {section}{\numberline {5.17}UncontractedPlayerInMatchRule}{14}{section.5.17}%
+\contentsline {chapter}{\numberline {6}Interrogazioni SPARQL}{15}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Interrogazione sui contratti di un giocatore}{15}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Interrogazione sui contratti non terminati}{16}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Interrogazione sui cartellini ricevuti dai giocatori}{16}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Interrogazione sulle sostituzioni effettuate in una partita}{17}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Interrogazione sui goal segnati dai giocatori}{17}{section.6.5}%
+\contentsline {chapter}{\numberline {7}Conclusioni}{19}{chapter.7}%

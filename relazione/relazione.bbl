@@ -19,6 +19,18 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global/global}
+    \entry{drawio}{online}{}{}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labeltitlesource}{title}
+      \field{title}{Draw.io}
+      \verb{urlraw}
+      \verb https://app.diagrams.net/
+      \endverb
+      \verb{url}
+      \verb https://app.diagrams.net/
+      \endverb
+    \endentry
     \entry{foot}{online}{}{}
       \field{sortinit}{F}
       \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
@@ -30,6 +42,18 @@
       \endverb
       \verb{url}
       \verb https://github.com/arditb1997/footology
+      \endverb
+    \endentry
+    \entry{webvowl}{online}{}{}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labeltitlesource}{title}
+      \field{title}{WebVOWL}
+      \verb{urlraw}
+      \verb https://service.tib.eu/webvowl/
+      \endverb
+      \verb{url}
+      \verb https://service.tib.eu/webvowl/
       \endverb
     \endentry
   \enddatalist
