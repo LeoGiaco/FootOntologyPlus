@@ -29,6 +29,8 @@
 \usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
 \usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
 \usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+\usepackage{enumitem}
+
 % These packages are all incorporated in the memoir class to one degree or another...
 
 %%% HEADERS & FOOTERS
@@ -133,6 +135,131 @@ Il nostro progetto è stato realizzato usando l'editor \textbf{Protegé}, un pro
 \chapter{Ontologia di partenza}
 
 \chapter{Modifiche all'ontologia}
+L'ontologia iniziale aveva una struttura minimale e mancava di molti concetti.
+È stato necessario eseguire un lavoro di "ristrutturazione", per renderla più completa possibile, e adeguata al contesto del calcio.
+
+In particolare, sono state aggiunte nuove informazioni tramite l’introduzione di classi e relazioni, è stata modificata la struttura complessiva dell’ontologia per migliorarne l’organizzazione, e infine si è cercato di integrarla con parti esistenti di altre ontologie, attraverso operazioni di collegamento (join) tra concetti compatibili.
+ \newpage
+ \section{Modifica concetti esistenti}
+
+ \begin{itemize}
+     \item \textbf{Match}
+
+     In Match è stato aggiunta come sottoclasse la  classe\textit{FriendlyMatch} che rappresenta le partite amichevoli, ovvere quelle che non appartengono a un \textit{Tournament}.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.3\linewidth]{MATCH.png}
+        \caption{UML Match}
+        \label{fig:enter-label}
+    \end{figure}
+     \item \textbf{PerformanceStats}
+
+     Invece, in PerformanceStats sono state aggiunte due sottoclassi, disgiunte tra di loro, \textit{PlayerPerformanceStats}, e \textit{TeamPerformanceStats}. Questo è stato fatto per distinguere meglio il concetto di statistiche su un match, e statistiche di un singolo player.
+     Per esempio la statistica del possesso palla non è concetto che è associato a un singolo calciatore ma è associata alla squadra.ù
+     \begin{figure}[H]
+         \centering
+         \includegraphics[width=0.4\linewidth]{STATS.png}
+         \caption{UML PerformanceStats}
+         \label{fig:enter-label}
+     \end{figure}
+     \item \textbf{Position}
+
+      In Position, sono state definite le  specifiche posizioni in campo, così da rappresentare in modo preciso e strutturato il ruolo dei giocatori all'interno della formazione. Nell'ontologia originale erano modellate come Data Properties.
+     \begin{figure}[H]
+         \centering
+         \includegraphics[width=1\linewidth]{POSITION.png}
+         \caption{UML Position}
+         \label{fig:enter-label}
+     \end{figure}
+    \hspace{2cm}
+
+    Le abbreviazioni CB, FB, WB, CDM, etc indicano le specifiche posizioni in campo, per esempio CB significa Central Back, cioè Difensore centrale.
+
+    \hspace{6cm}
+     \item \textbf{Player}
+
+     La classe Player infine è stata modificata in due classi equivalenti: CanBeCarded e ContractParticipant. Queste sono sottoclassi di Person; Person importata da \textit{schema.org}, vedi prossima sezione.
+ \end{itemize}
+\newpage
+
+\section{Join con altre ontologie}
+
+Come richiesto dalla consegna, è stato necessario integrare l'ontologia con altre ontologie esistenti, facendo operazioni di join per favorire l'interoperabilità dei concetti.
+
+In particolare, sono stati importati:
+
+\begin{itemize}
+  \item La classe \textbf{Person} dall'ontologia \textit{schema.org}, utilizzata per rappresentare entità individuali come giocatori, illenatori e arbitri. 
+  
+  Nella nostra ontologia, \textit{Person} è stata inserita come superclasse delle classi \textit{Player}, \textit{Coach} e \textit{Referee}. Il join è stato eseguito in modo da includere solo le \textit{Object Properties} che ci interessavano, escludendo quelle non rilevanti  per il nostro dominio.
+
+  \begin{figure}[H]
+      \centering
+      \includegraphics[width=0.7\linewidth]{PERSON.png}
+      \caption{Enter Caption}
+      \label{fig:enter-label}
+  \end{figure}
+
+  \item Le classi \textbf{City} e \textbf{Country} da \textit{dbpedia.org}, adottate per modellare i concetti geografici. 
+  
+  Anche in questo caso è stato effettuato un join selettivo: \textit{City} e \textit{Country} sono state collegate alla nostra ontologia per rappresentare, rispettivamente, la città dello stadio, la nazione della lega, e la nazionalità delle persone, attraverso la superclasse \textit{Person}.
+\end{itemize}
+
+\newpage
+
+
+ \section{Classi aggiunte}
+
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Contract}
+  \begin{itemize}[leftmargin=2em]
+    \item CoachContract
+    \item PlayerContract
+  \end{itemize}
+
+  \item \textbf{Formation}
+  \begin{itemize}[leftmargin=2em]
+    \item 343
+    \item 352
+    \item 424
+    \item 433
+    \item 442
+    \item 451
+    \item 523
+    \item 532
+    \item 541
+  \end{itemize}
+
+  \item \textbf{MatchEvent}
+  \begin{itemize}[leftmargin=2em]
+    \item Card
+    \begin{itemize}[leftmargin=2em]
+      \item RedCard
+      \item YellowCard
+    \end{itemize}
+
+    \item Corner
+
+    \item FreeKick
+    \begin{itemize}[leftmargin=2em]
+      \item PenaltyKick
+    \end{itemize}
+
+    \item Goal
+    \item Offside
+    \item Substitution
+  \end{itemize}
+
+  \item \textbf{Season}
+\end{itemize}
+
+
+
+
+ \subsection{Classi d'errore}
+
+ \newpage
+ \section{Proprietà Aggiunge}
 
 \chapter{Inserimento di individui}
 
