@@ -1,15 +1,15 @@
 [0] Config.pm:308> INFO - This is Biber 2.20
 [0] Config.pm:311> INFO - Logfile is 'relazione.blg'
-[73] biber:340> INFO - === dom lug 13, 2025, 17:21:08
-[88] Biber.pm:420> INFO - Reading 'relazione.bcf'
-[147] Biber.pm:994> INFO - Found 1 citekeys in bib section 0
-[158] Biber.pm:4463> INFO - Processing section 0
-[167] Biber.pm:4654> INFO - Looking for bibtex file 'citations.bib' for section 0
-[168] bibtex.pm:1713> INFO - LaTeX decoding ...
-[169] bibtex.pm:1519> INFO - Found BibTeX data source 'citations.bib'
-[179] UCollate.pm:68> INFO - Overriding locale 'it-IT' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[179] UCollate.pm:68> INFO - Overriding locale 'it-IT' defaults 'variable = shifted' with 'variable = non-ignorable'
-[179] Biber.pm:4283> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'it-IT'
-[179] Biber.pm:4289> INFO - No sort tailoring available for locale 'it-IT'
-[184] bbl.pm:676> INFO - Writing 'relazione.bbl' with encoding 'UTF-8'
-[184] bbl.pm:779> INFO - Output to relazione.bbl
+[73] biber:340> INFO - === lun lug 14, 2025, 19:38:00
+[87] Biber.pm:420> INFO - Reading 'relazione.bcf'
+[145] Biber.pm:994> INFO - Found 3 citekeys in bib section 0
+[155] Biber.pm:4463> INFO - Processing section 0
+[165] Biber.pm:4654> INFO - Looking for bibtex file 'citations.bib' for section 0
+[166] bibtex.pm:1713> INFO - LaTeX decoding ...
+[168] bibtex.pm:1519> INFO - Found BibTeX data source 'citations.bib'
+[186] UCollate.pm:68> INFO - Overriding locale 'it-IT' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[186] UCollate.pm:68> INFO - Overriding locale 'it-IT' defaults 'variable = shifted' with 'variable = non-ignorable'
+[186] Biber.pm:4283> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'it-IT'
+[187] Biber.pm:4289> INFO - No sort tailoring available for locale 'it-IT'
+[194] bbl.pm:676> INFO - Writing 'relazione.bbl' with encoding 'UTF-8'
+[195] bbl.pm:779> INFO - Output to relazione.bbl

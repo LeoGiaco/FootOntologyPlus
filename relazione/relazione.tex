@@ -90,7 +90,7 @@
 }
 
 \usepackage{graphicx}
-\graphicspath{ {./} }
+\graphicspath{ {./img/} }
 
 %%% END Article customizations
 
@@ -133,6 +133,94 @@ L'entità delle nostre modifiche è discussa nei capitoli successivi.
 Il nostro progetto è stato realizzato usando l'editor \textbf{Protegé}, un programma open source per visualizzare e modificare ontologie.
 
 \chapter{Ontologia di partenza}
+
+\section{Informazioni di base}
+
+Footology è disponibile su Github \cite{foot}, pubblicata dall'utente \textbf{arditb1997}, ed è un'ontologia relativamente semplice che modella gli aspetti principali del calcio.
+
+\hfill
+
+L'ontologia è disponibile in 3 formati diversi: \textbf{owl}, \textbf{rdf} e \textbf{ttl}.
+\textbf{OWL} e \textbf{RDF} sono due linguaggi di knowledge representation, mentre il terzo, \textbf{Turtle}, è semplicemente una sintassi usata per esprimere ontologie scritte in uno dei due linguaggi precedenti in un formato testuale più facile da leggere. 
+
+\section{Dettagli dell'ontologia}
+
+La seguente tabella riassume i contenuti dell'ontologia:
+
+\begin{center}
+    \begin{tabular}{||c|c||}
+        \hline
+        Classi & \texttt{13} \\
+        \hline
+        Object properties & \texttt{26} \\
+        \hline
+        Data properties & \texttt{46} \\
+        \hline
+        Individui & \texttt{0} \\
+        \hline
+        Nodi (del grafo) & \texttt{59} \\
+        \hline
+        Foglie (del grafo) & \texttt{62} \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\section{Classi dell'ontologia}
+
+Le classi contenute nell'ontologia sono:
+
+\begin{itemize}
+    \item \texttt{Player}, che rappresenta un calciatore;
+    \item \texttt{Team}, che rappresenta una squadra di calcio;
+    \item \texttt{Match}, una partita di calcio;
+    \item \texttt{PerformanceStats}, statistiche riguardanti un calciatore in una partita o all'intera partita;
+    \item \texttt{Tournament}, un torneo di calcio, che ha come sottoclassi \texttt{KnockOutTournament}, un torneo piramidale ad eliminazione diretta, e \texttt{League}, un torneo in cui ogni squadra affronta tutte le altre e accumula punti in base al risultato delle partite;
+    \item \texttt{Stadium}, uno stadio in cui si giocano le partite;
+    \item \texttt{Coach}, un allenatore;
+    \item \texttt{Referee}, un arbitro;
+    \item \texttt{Position}, la posizione di un giocatore in partita;
+    \item \texttt{Trophy}, un trofeo vinto da una squadra;
+    \item \texttt{Award}, un premio vinto da un giocatore.
+\end{itemize}
+
+\section{Proprietà importanti}
+
+Le proprietà più importanti nell'ontologia sono:
+
+\begin{itemize}
+    \item \texttt{playsFor}, che collega un giocatore a una squadra in cui gioca;
+    \item \texttt{participatesIn}, che collega un giocatore a una partita a cui partecipa;
+    \item \texttt{competesIn}, che collega una squadra a una partita in cui è coinvolta;
+    \item \texttt{partOf}, che collega una squadra ad un torneo a cui partecipa;
+    \item \texttt{hasStats} e \texttt{hasPerformanceStats}, che collegano rispettivamente un giocatore e una partita a delle statistiche;
+    \item \texttt{hosts}, che collega uno stadio ad una partita;
+    \item \texttt{officiates}, che collega un arbitro ad una partita;
+    \item \texttt{manages}, che collega un allenatore ad una squadra.
+\end{itemize}
+    
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=0.85\textwidth]{footology_2.1.png}
+    \end{center}
+    \caption{Grafico dell'ontologia, realizzat0 con WebVOWL \cite{webvowl,foot}.}
+\end{figure}
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=0.85\textwidth]{footology_v2.1_schema.png}
+    \end{center}
+    \caption{Schema dell'ontologia, realizzato con Draw.io \cite{drawio, foot}.}
+\end{figure}
+    
+\section{Ontologie incluse}
+
+Per realizzare l'ontologia sono stati utilizzati:
+
+\begin{itemize}
+    \item \textbf{RDF} (\textbf{Resource Description Language}), un modello per la rappresentazione di dati (e metadati), avente una struttura graph-based nella quale essi sono scritti sotto forma di triple soggetto-predicato-oggetto;
+    \item \textbf{RDFS} (\textbf{RDF Schema}), un insieme di classi e proprietà utili che estendono il vocabolario di RDF;
+    \item \textbf{OWL} (\textbf{Web Ontology Language}), un linguaggio standard usato per realizzare ontologie, che estende RDF;
+    \item \textbf{DublinCore}, un vocabolario che contiene termini standard per la definizione di metadati (titolo, autore, descrizione, ecc.).
+\end{itemize}
 
 \chapter{Modifiche all'ontologia}
 L'ontologia iniziale aveva una struttura minimale e mancava di molti concetti.
