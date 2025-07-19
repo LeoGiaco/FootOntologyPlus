@@ -290,13 +290,17 @@ In particolare, sono stati importati:
 
   \item Le classi \textbf{City} e \textbf{Country} da \textit{dbpedia.org}, adottate per modellare i concetti geografici. 
   
-  Anche in questo caso è stato effettuato un join selettivo: \textit{City} e \textit{Country} sono state collegate alla nostra ontologia per rappresentare, rispettivamente, la città dello stadio, la nazione della lega, e la nazionalità delle persone, attraverso la superclasse \textit{Person}.
+  Anche in questo caso è stato effettuato un join selettivo: \textit{City} e \textit{Country} sono state collegate alla nostra ontologia per rappresentare, rispettivamente, la città dello stadio, la nazione della lega, e la nazionalità delle persone.
+  
+  La relazione "hasNationality" tra Country e Person, è stata definita direttamente sulla superclasse \textit{Person}, in modo da inferire tale relazione a tutte le sottoclassi di Person: come \textit{Player}, \textit{Referee} o \textit{Coach}.
 \end{itemize}
 
 \newpage
 
 
  \section{Classi aggiunte}
+
+Come detto a inizio capitolo l'ontologia di partenza era incompleta su vari aspetti. Di seguito, si mostrano i nuovi concetti inseriti.
 
 \begin{itemize}[leftmargin=*]
   \item \textbf{Contract}
@@ -305,51 +309,86 @@ In particolare, sono stati importati:
     \item PlayerContract
   \end{itemize}
 
+  I contratti sono utili per mettere in relazione giocatori e allenatori alle squadre, tenendo conto anche di una storicizzazione con i contratti terminati. Per esempio un contratto terminato, indica che un certo giocatore/allenatore ha giocato per una certa squadra.
+  
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{CONTRACT.png}
+    \caption{UML contratti in relazione con Team, Coach e Player}
+    \label{fig:enter-label}
+\end{figure}
+
+Nella figura 3.5 sono mostrate solo alcune relazioni che legano i contratti con giocatori e allenatori. Per esempio non sono mostrate le inverse, o la relazione padre,  Person - Contract, e Team - Contract. 
+\newpage
   \item \textbf{Formation}
-  \begin{itemize}[leftmargin=2em]
-    \item 343
-    \item 352
-    \item 424
-    \item 433
-    \item 442
-    \item 451
-    \item 523
-    \item 532
-    \item 541
-  \end{itemize}
+  Inizialmente, i moduli adottati dalle squadre nei match erano rappresentati tramite \textit{Data Properties}. Tuttavia, poiché l’insieme dei moduli è finito e ben definito (es. 4-3-3, 3-5-2, ecc.), abbiamo preferito modellare i moduli come istanze di una specifica classe.
 
   \item \textbf{MatchEvent}
-  \begin{itemize}[leftmargin=2em]
-    \item Card
-    \begin{itemize}[leftmargin=2em]
-      \item RedCard
-      \item YellowCard
-    \end{itemize}
+  
+  Gli eventi dei match non erano presenti, quindi li abbiamo inseriti attraverso una gerarchia di classi.
 
-    \item Corner
+\begin{figure} [h]
+    \centering
+    \includegraphics[width=1.1\linewidth]{MATCHEVENT.png}
+    \caption{Uml eventi match}
+    \label{fig:enter-label}
+\end{figure}
 
-    \item FreeKick
-    \begin{itemize}[leftmargin=2em]
-      \item PenaltyKick
-    \end{itemize}
+Nella figura 3.6 sono mostrate anche come gli eventi sono messi in relazione ai Match; è stata inserita anche la relazione ai Team, per modellare di quale squadra è l'evento. Inoltre alcuni eventi sono associati ai Player. 
 
-    \item Goal
-    \item Offside
-    \item Substitution
-  \end{itemize}
-
-  \item \textbf{Season}
-\end{itemize}
-
-
-
-
+\newpage
  \subsection{Classi d'errore}
 
  \newpage
  \section{Proprietà Aggiunge}
 
 \chapter{Inserimento di individui}
+La fase successiva ha riguardato l'inserimento degli individui nelle varie classi. L'obiettivo era quello di aggiungere esempi concreti di istanze all'interno dell'ontologia, così da renderla effettivamente utilizzabile per interrogazioni SPARQL.
+
+\hfill
+
+Creare tutti gli individui per ogni classe e definire tutte le relative relazioni è un'attività molto lunga e ripetitiva. Per questo motivo, ci siamo limitati a creare una sottoparte degli individui, sufficiente per mostrare il funzionamento delle query.
+
+\hfill
+
+Per velocizzare questa fase, abbiamo utilizzato il framework \textit{Cellfie}, un plugin di Protege che consente di generare individui a partire da un file Excel.
+Nel nostro caso, ogni riga del file Excel rappresenta un'istanza (individuo) da creare, mentre le colonne contengono le informazioni associate a questo. In particolare:
+
+\begin{itemize}
+\item la prima colonna contiene il nome dell'individuo;
+\item le altre colonne rappresentano i valori associati a una o più Object Properties e/o Data Properties
+\end{itemize}
+\newpage
+\section{Esempio inserimento con Cellfie}
+Di seguito è riportato come abbiamo inserito molti contratti, presenti in un file Excel, attraverso il plugin Cellfie e come abbiamo impostato le regole.
+
+\hfill
+
+Nella Figura 4.1 è mostrata la tabella da inserire, mentre nell'immagine 4.2 si può osservare come sono impostati i campi di ogni colonna.
+In questo caso abbiamo:
+\begin{itemize}
+    \item Colonna A: rappresenta il nome dell'individuo
+    \item Colonna B: Data Properties per l'inizio del contratto
+    \item Colonna C: Data Properties per la fine del contratto (se il contratto è ancora attivo allora non è presenta la data di fine contratto.)
+    \item Colonna D: Data Properties per il valore del contratto
+    \item Colonna E: Object Properties della squadra a cui è associato
+    \item Colonna F: Object Properties del giocatore a cui è associato
+\end{itemize}
+
+\hfill
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{EXCELCONTRACT.jpeg}
+    \caption{Excel dei contratti}
+    \label{fig:enter-label}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{RULECELLFIE.jpeg}
+    \caption{Regola per inserire i contratti presenti nell'Excel}
+    \label{fig:enter-label}
+\end{figure}
 
 \chapter{Regole SWRL}
 
