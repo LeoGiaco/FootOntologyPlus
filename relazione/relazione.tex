@@ -238,7 +238,6 @@ In particolare, sono state aggiunte nuove informazioni tramite l’introduzione 
         \centering
         \includegraphics[width=0.3\linewidth]{MATCH.png}
         \caption{UML Match}
-        \label{fig:enter-label}
     \end{figure}
      \item \textbf{PerformanceStats}
 
@@ -248,7 +247,6 @@ In particolare, sono state aggiunte nuove informazioni tramite l’introduzione 
          \centering
          \includegraphics[width=0.4\linewidth]{STATS.png}
          \caption{UML PerformanceStats}
-         \label{fig:enter-label}
      \end{figure}
      \item \textbf{Position}
 
@@ -257,7 +255,6 @@ In particolare, sono state aggiunte nuove informazioni tramite l’introduzione 
          \centering
          \includegraphics[width=1\linewidth]{POSITION.png}
          \caption{UML Position}
-         \label{fig:enter-label}
      \end{figure}
     \hspace{2cm}
 
@@ -285,7 +282,6 @@ In particolare, sono stati importati:
       \centering
       \includegraphics[width=0.7\linewidth]{PERSON.png}
       \caption{Enter Caption}
-      \label{fig:enter-label}
   \end{figure}
 
   \item Le classi \textbf{City} e \textbf{Country} da \textit{dbpedia.org}, adottate per modellare i concetti geografici. 
@@ -315,26 +311,27 @@ Come detto a inizio capitolo l'ontologia di partenza era incompleta su vari aspe
     \centering
     \includegraphics[width=0.8\linewidth]{CONTRACT.png}
     \caption{UML contratti in relazione con Team, Coach e Player}
-    \label{fig:enter-label}
 \end{figure}
 
 Nella figura 3.5 sono mostrate solo alcune relazioni che legano i contratti con giocatori e allenatori. Per esempio non sono mostrate le inverse, o la relazione padre,  Person - Contract, e Team - Contract. 
 \newpage
   \item \textbf{Formation}
+  
   Inizialmente, i moduli adottati dalle squadre nei match erano rappresentati tramite \textit{Data Properties}. Tuttavia, poiché l’insieme dei moduli è finito e ben definito (es. 4-3-3, 3-5-2, ecc.), abbiamo preferito modellare i moduli come istanze di una specifica classe.
 
   \item \textbf{MatchEvent}
-  
+
   Gli eventi dei match non erano presenti, quindi li abbiamo inseriti attraverso una gerarchia di classi.
 
 \begin{figure} [h]
     \centering
-    \includegraphics[width=1.1\linewidth]{MATCHEVENT.png}
+    \includegraphics[width=\textwidth]{MATCHEVENT.png}
     \caption{Uml eventi match}
-    \label{fig:enter-label}
 \end{figure}
 
 Nella figura 3.6 sono mostrate anche come gli eventi sono messi in relazione ai Match; è stata inserita anche la relazione ai Team, per modellare di quale squadra è l'evento. Inoltre alcuni eventi sono associati ai Player. 
+
+\end{itemize}
 
 \newpage
  \subsection{Classi d'errore}
@@ -381,13 +378,11 @@ In questo caso abbiamo:
     \centering
     \includegraphics[width=0.9\linewidth]{EXCELCONTRACT.jpeg}
     \caption{Excel dei contratti}
-    \label{fig:enter-label}
 \end{figure}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\linewidth]{RULECELLFIE.jpeg}
     \caption{Regola per inserire i contratti presenti nell'Excel}
-    \label{fig:enter-label}
 \end{figure}
 
 \chapter{Regole SWRL}
