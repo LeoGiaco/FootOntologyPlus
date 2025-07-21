@@ -202,7 +202,7 @@ Le proprietà più importanti nell'ontologia sono:
     \begin{center}
         \includegraphics[width=0.85\textwidth]{footology_2.1.png}
     \end{center}
-    \caption{Grafico dell'ontologia, realizzat0 con WebVOWL \cite{webvowl,foot}.}
+    \caption{Grafico dell'ontologia, realizzato con WebVOWL \cite{webvowl,foot}.}
 \end{figure}
 \begin{figure}[H]
     \begin{center}
@@ -224,7 +224,9 @@ Per realizzare l'ontologia sono stati utilizzati:
 
 \chapter{Modifiche all'ontologia}
 L'ontologia iniziale aveva una struttura minimale e mancava di molti concetti.
-È stato necessario eseguire un lavoro di "ristrutturazione", per renderla più completa possibile, e adeguata al contesto del calcio.
+È stato necessario eseguire un lavoro di ristrutturazione, per renderla più completa possibile, e adeguata al contesto del calcio.
+
+\hfill
 
 In particolare, sono state aggiunte nuove informazioni tramite l’introduzione di classi e relazioni, è stata modificata la struttura complessiva dell’ontologia per migliorarne l’organizzazione, e infine si è cercato di integrarla con parti esistenti di altre ontologie, attraverso operazioni di collegamento (join) tra concetti compatibili.
  \newpage
@@ -233,37 +235,35 @@ In particolare, sono state aggiunte nuove informazioni tramite l’introduzione 
  \begin{itemize}
      \item \textbf{Match}
 
-     In Match è stato aggiunta come sottoclasse la  classe\textit{FriendlyMatch} che rappresenta le partite amichevoli, ovvere quelle che non appartengono a un \textit{Tournament}.
+     In \texttt{Match} è stato aggiunta come sottoclasse la  classe \texttt{FriendlyMatch} che rappresenta le partite amichevoli, ovvere quelle che non appartengono a un \texttt{Tournament}.
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.3\linewidth]{MATCH.png}
         \caption{UML Match}
+        \label{fig:enter-label}
     \end{figure}
      \item \textbf{PerformanceStats}
 
-     Invece, in PerformanceStats sono state aggiunte due sottoclassi, disgiunte tra di loro, \textit{PlayerPerformanceStats}, e \textit{TeamPerformanceStats}. Questo è stato fatto per distinguere meglio il concetto di statistiche su un match, e statistiche di un singolo player.
-     Per esempio la statistica del possesso palla non è concetto che è associato a un singolo calciatore ma è associata alla squadra.ù
+     Invece, in \texttt{PerformanceStats} sono state aggiunte due sottoclassi, disgiunte tra di loro, \texttt{PlayerPerformanceStats}, e \texttt{TeamPerformanceStats}. Questo è stato fatto per distinguere meglio il concetto di statistiche su un \texttt{Match}, e statistiche di un singolo \texttt{Player}.
+     Per esempio la statistica del possesso palla non è concetto che è associato a un singolo calciatore ma è associata alla squadra.
      \begin{figure}[H]
          \centering
          \includegraphics[width=0.4\linewidth]{STATS.png}
          \caption{UML PerformanceStats}
+         \label{fig:enter-label}
      \end{figure}
      \item \textbf{Position}
 
-      In Position, sono state definite le  specifiche posizioni in campo, così da rappresentare in modo preciso e strutturato il ruolo dei giocatori all'interno della formazione. Nell'ontologia originale erano modellate come Data Properties.
+      In \texttt{Position}, sono state definite le  specifiche posizioni in campo, così da rappresentare in modo preciso e strutturato il ruolo dei giocatori all'interno della formazione. Nell'ontologia originale erano modellate come Data Properties.
      \begin{figure}[H]
          \centering
          \includegraphics[width=1\linewidth]{POSITION.png}
          \caption{UML Position}
+         \label{fig:enter-label}
      \end{figure}
     \hspace{2cm}
 
     Le abbreviazioni CB, FB, WB, CDM, etc indicano le specifiche posizioni in campo, per esempio CB significa Central Back, cioè Difensore centrale.
-
-    \hspace{6cm}
-     \item \textbf{Player}
-
-     La classe Player infine è stata modificata in due classi equivalenti: CanBeCarded e ContractParticipant. Queste sono sottoclassi di Person; Person importata da \textit{schema.org}, vedi prossima sezione.
  \end{itemize}
 \newpage
 
@@ -274,21 +274,21 @@ Come richiesto dalla consegna, è stato necessario integrare l'ontologia con alt
 In particolare, sono stati importati:
 
 \begin{itemize}
-  \item La classe \textbf{Person} dall'ontologia \textit{schema.org}, utilizzata per rappresentare entità individuali come giocatori, illenatori e arbitri. 
+  \item La classe \texttt{Person} dall'ontologia \textit{schema.org}, utilizzata per rappresentare entità individuali come giocatori, illenatori e arbitri. 
   
-  Nella nostra ontologia, \textit{Person} è stata inserita come superclasse delle classi \textit{Player}, \textit{Coach} e \textit{Referee}. Il join è stato eseguito in modo da includere solo le \textit{Object Properties} che ci interessavano, escludendo quelle non rilevanti  per il nostro dominio.
+  Nella nostra ontologia, \texttt{Person} è stata inserita come superclasse delle classi \texttt{Player}, \texttt{Coach} e \texttt{Referee}. Il join è stato eseguito in modo da includere solo le Object Properties che ci interessavano, escludendo quelle non rilevanti per il nostro dominio.
 
   \begin{figure}[H]
       \centering
-      \includegraphics[width=0.7\linewidth]{PERSON.png}
-      \caption{Enter Caption}
+      \includegraphics[width=0.8\linewidth]{PERSON.png}
+      \caption{UML Person}
   \end{figure}
-
-  \item Le classi \textbf{City} e \textbf{Country} da \textit{dbpedia.org}, adottate per modellare i concetti geografici. 
+    \newpage
+  \item Le classi \texttt{City} e \texttt{Country} da \textit{dbpedia.org}, adottate per modellare i concetti geografici. 
   
-  Anche in questo caso è stato effettuato un join selettivo: \textit{City} e \textit{Country} sono state collegate alla nostra ontologia per rappresentare, rispettivamente, la città dello stadio, la nazione della lega, e la nazionalità delle persone.
+  Anche in questo caso è stato effettuato un join selettivo: \texttt{City} e \texttt{Country} sono state collegate alla nostra ontologia per rappresentare, rispettivamente, la città dello stadio, la nazione della lega, e la nazionalità delle persone.
   
-  La relazione "hasNationality" tra Country e Person, è stata definita direttamente sulla superclasse \textit{Person}, in modo da inferire tale relazione a tutte le sottoclassi di Person: come \textit{Player}, \textit{Referee} o \textit{Coach}.
+  La relazione \texttt{hasNationality} tra \texttt{Country} e \texttt{Person}, è stata definita direttamente sulla superclasse \texttt{Person}, in modo da inferire tale relazione a tutte le sottoclassi di Person: come \texttt{Player}, \texttt{Referee} o \texttt{Coach}.
 \end{itemize}
 
 \newpage
@@ -301,9 +301,10 @@ Come detto a inizio capitolo l'ontologia di partenza era incompleta su vari aspe
 \begin{itemize}[leftmargin=*]
   \item \textbf{Contract}
   \begin{itemize}[leftmargin=2em]
-    \item CoachContract
-    \item PlayerContract
+    \item \texttt{CoachContract}
+    \item \texttt{PlayerContract}
   \end{itemize}
+  
 
   I contratti sono utili per mettere in relazione giocatori e allenatori alle squadre, tenendo conto anche di una storicizzazione con i contratti terminati. Per esempio un contratto terminato, indica che un certo giocatore/allenatore ha giocato per una certa squadra.
   
@@ -311,36 +312,121 @@ Come detto a inizio capitolo l'ontologia di partenza era incompleta su vari aspe
     \centering
     \includegraphics[width=0.8\linewidth]{CONTRACT.png}
     \caption{UML contratti in relazione con Team, Coach e Player}
+    \label{fig:enter-label}
 \end{figure}
 
-Nella figura 3.5 sono mostrate solo alcune relazioni che legano i contratti con giocatori e allenatori. Per esempio non sono mostrate le inverse, o la relazione padre,  Person - Contract, e Team - Contract. 
+Nella figura 3.5 sono mostrate solo alcune relazioni che legano i contratti con giocatori e allenatori. Per esempio non sono mostrate le inverse, o la relazione padre,  \texttt{Person} - \texttt{Contract}, e \texttt{Team} - \texttt{Contract}. 
 \newpage
   \item \textbf{Formation}
-  
-  Inizialmente, i moduli adottati dalle squadre nei match erano rappresentati tramite \textit{Data Properties}. Tuttavia, poiché l’insieme dei moduli è finito e ben definito (es. 4-3-3, 3-5-2, ecc.), abbiamo preferito modellare i moduli come istanze di una specifica classe.
+  Inizialmente, i moduli adottati dalle squadre nei match erano rappresentati tramite Data Properties. Tuttavia, poiché l’insieme dei moduli più comuni è ben definito (es. 4-3-3, 3-5-2, ecc.), abbiamo preferito modellare i moduli come sottoclassi di \texttt{Formation}.
 
   \item \textbf{MatchEvent}
-
+  
   Gli eventi dei match non erano presenti, quindi li abbiamo inseriti attraverso una gerarchia di classi.
 
 \begin{figure} [h]
     \centering
-    \includegraphics[width=\textwidth]{MATCHEVENT.png}
-    \caption{Uml eventi match}
+    \includegraphics[width=1.1\linewidth]{MATCHEVENT.png}
+    \caption{UML eventi Match}
+    \label{fig:enter-label}
 \end{figure}
 
-Nella figura 3.6 sono mostrate anche come gli eventi sono messi in relazione ai Match; è stata inserita anche la relazione ai Team, per modellare di quale squadra è l'evento. Inoltre alcuni eventi sono associati ai Player. 
-
-\end{itemize}
+Nella figura 3.6 sono mostrate anche come gli eventi sono messi in relazione ai \texttt{Match}; è stata inserita anche la relazione ai \texttt{Team}, per modellare di quale squadra è l'evento. Inoltre alcuni eventi sono associati ai \texttt{Player}. 
 
 \newpage
  \subsection{Classi d'errore}
+Per gestire eventuali errori dovuti a incompatibilità nei dati, rilevati tramite regole SWRL, è stata introdotta una classe \texttt{Error}. Questa classe raccoglie diverse sottoclassi, ciascuna delle quali rappresenta un tipo specifico di errore semantico o logico. In questo modo, è possibile classificare e tracciare gli errori direttamente all’interno dell’ontologia, facilitando il controllo di consistenza durante la validazione dei dati.
 
- \newpage
- \section{Proprietà Aggiunge}
+Le sottoclassi di Error sono: 
+\begin{itemize}
+    \item \texttt{FriendlyMatchInTournamentError}
+    \item \texttt{InconsistentBallPossessionInMatchError}
+    \item \texttt{InconsistentContractDatesError}
+    \item \texttt{InconsistentMatchScoresError}
+    \item \texttt{InconsistentPlayerPassesError}
+    \item \texttt{InvalidLeagueMatchFormatError}
+    \item \texttt{InvalidMatchError}
+    \item \texttt{InvalidSubstitutionError}
+    \begin{itemize}
+        \item \texttt{DuplicateSubstitutedError}
+        \item \texttt{DuplicateSubstituteError}
+        \item \texttt{InvalidReserveReplacementError}
+        \item \texttt{InvalidSubstitutionPlayersError}
+        \item \texttt{StarterAsSubstituteError}
+    \end{itemize}
+    \item \texttt{MultipleRedCardsError}
+    \item \texttt{NonGoalKeeperWithSavesError}
+    \item \texttt{TeamNotInMatchError}
+    \item \texttt{UncontractedPlayerInMatchError}
+\end{itemize}
 
+Vedi capitolo su regole SWRL per l'utilizzo di queste classi.
+\newpage
+
+\section{Proprietà aggiunte}
+Di seguito una lista delle proprietà più importanti aggiunte.
+
+Object Properties:
+\begin{itemize}
+    \item \textbf{hasEvent} (da \texttt{Match} a \texttt{MatchEvent}): associa a una partita i suoi eventi (goal, falli, sostituzioni, ecc.).
+
+\item \textbf{hasFormation} (da \texttt{Team} a \texttt{Formation}): specifica la formazione adottata da una squadra.
+
+\item \textbf{hasMatchEvent} (da \texttt{Team} a \texttt{MatchEvent}): collega una squadra agli eventi della partita.
+
+\item \textbf{hasPlayer} (da \texttt{Match} a \texttt{Player}): elenca i giocatori che partecipano a una determinata partita.
+
+\item \textbf{hasPlayerPerformanceStats} (da \texttt{Match} a \texttt{PlayerPerformanceStats}): collega una partita alle statistiche individuali dei giocatori.
+
+\item \textbf{hasPosInFormation} (da \texttt{Formation} a \texttt{Position}): definisce le posizioni previste all'interno di una formazione.
+
+
+\item \textbf{hasTeamFormation} (da \texttt{Match} a \texttt{Formation}): specifica le formazioni usate dalle squadre in una partita.
+
+\item \textbf{hasWinner} (da \textit{Match} a \textit{Team}): indica la squadra vincitrice della partita.
+
+\item \textbf{includes} (da \texttt{Match} a \texttt{Team}): rappresenta le squadre che partecipano a una partita; ha come sotto-proprietà:
+\begin{itemize}
+    \item \textbf{hasHomeTeam}: indica la squadra di casa;
+    \item \textbf{hasAwayTeam}: indica la squadra ospite.
+\end{itemize}
+
+\item \textbf{involves} (da \texttt{Contract} a \texttt{Player} o \texttt{Coach}): collega un contratto con un giocatore o un allenatore.
+
+\item \textbf{partecipatesIn} (da \texttt{Player} a \texttt{Match}): indica le partite a cui ha partecipato un giocatore.
+
+\item \textbf{scores} (da \texttt{Player} a \texttt{Goal}): rappresenta i goal segnati da un giocatore.
+
+\item \textbf{signs} (da \texttt{Team} a \texttt{Contract}): indica i contratti firmati da una squadra.
+
+\item \textbf{statsIn} (da \texttt{PerformanceStats} a \texttt{Match}): collega le statistiche a una specifica partita.
+
+\end{itemize}
+\newpage
+Data Properties:
+\begin{itemize}
+    \item \textbf{BallPossession} (su \texttt{TeamPerformanceStats}): indica la percentuale di possesso palla di una squadra in una partita.
+    \item \textbf{BirthDate} (su \texttt{Person}): rappresenta la data di nascita di una persona.
+
+\item \textbf{IsFriendlyMatch} (su \texttt{Match}): specifica se una partita è amichevole.
+
+\item \textbf{MatchAwayTeamScore} (su \texttt{Match}): indica il numero di goal segnati dalla squadra ospite.
+
+\item \textbf{MatchHomeTeamScore} (su \texttt{Match}): indica il numero di goal segnati dalla squadra di casa.
+
+\item \textbf{MatchDate} (su \texttt{Match}): rappresenta la data in cui si è svolta la partita.
+
+\item \textbf{MinuteOfEvent} (su \texttt{MatchEvent}): indica il minuto della partita in cui si è verificato un evento.
+
+\item \textbf{NumberOfDefenders} (su \texttt{Formation}): specifica il numero di difensori nella formazione.
+
+\item \textbf{NumberOfMidfielders} (su \texttt{Formation}): specifica il numero di centrocampisti nella formazione.
+
+\item \textbf{NumberOfStrikers} (su \texttt{Formation}): specifica il numero di attaccanti nella formazione.
+
+\end{itemize}
 \chapter{Inserimento di individui}
-La fase successiva ha riguardato l'inserimento degli individui nelle varie classi. L'obiettivo era quello di aggiungere esempi concreti di istanze all'interno dell'ontologia, così da renderla effettivamente utilizzabile per interrogazioni SPARQL.
+La fase successiva ha riguardato l'inserimento degli individui nelle varie classi. L'obiettivo era quello di aggiungere esempi concreti di istanze all'interno dell'ontologia, così da renderla effettivamente utilizzabile per interrogazioni \textbf{SPARQL}.
 
 \hfill
 
@@ -348,7 +434,7 @@ Creare tutti gli individui per ogni classe e definire tutte le relative relazion
 
 \hfill
 
-Per velocizzare questa fase, abbiamo utilizzato il framework \textit{Cellfie}, un plugin di Protege che consente di generare individui a partire da un file Excel.
+Per velocizzare questa fase, abbiamo utilizzato il framework \textbf{Cellfie}, un plugin di \textbf{Protegé} che consente di generare individui a partire da un file Excel.
 Nel nostro caso, ogni riga del file Excel rappresenta un'istanza (individuo) da creare, mentre le colonne contengono le informazioni associate a questo. In particolare:
 
 \begin{itemize}
@@ -357,7 +443,7 @@ Nel nostro caso, ogni riga del file Excel rappresenta un'istanza (individuo) da 
 \end{itemize}
 \newpage
 \section{Esempio inserimento con Cellfie}
-Di seguito è riportato come abbiamo inserito molti contratti, presenti in un file Excel, attraverso il plugin Cellfie e come abbiamo impostato le regole.
+Di seguito è riportato come abbiamo inserito molti contratti, presenti in un file Excel, attraverso il plugin \textbf{Cellfie} e come abbiamo impostato le regole.
 
 \hfill
 
@@ -378,11 +464,13 @@ In questo caso abbiamo:
     \centering
     \includegraphics[width=0.9\linewidth]{EXCELCONTRACT.jpeg}
     \caption{Excel dei contratti}
+    \label{fig:enter-label}
 \end{figure}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\linewidth]{RULECELLFIE.jpeg}
     \caption{Regola per inserire i contratti presenti nell'Excel}
+    \label{fig:enter-label}
 \end{figure}
 
 \chapter{Regole SWRL}
@@ -551,7 +639,6 @@ La regola copre soltanto i casi in cui il giocatore si trovava sotto contratto c
 \begin{lstlisting}[language=SWRL]
 signs(?t1, ?c) ^ involvesPlayer(?c, ?p) ^ participatesIn(?p, ?m) ^ includes(?m, ?t2) ^ includes(?m, ?t3) ^ differentFrom(?t1, ?t2) ^ differentFrom(?t1, ?t3) ^ ContractStartDate(?c, ?sd) ^ ContractEndDate(?c, ?ed) ^ MatchDate(?m, ?d) ^ temporal:before(?sd, ?d) ^ temporal:after(?ed, ?d) -> UncontractedPlayerInMatchError(?p)
 \end{lstlisting}
-
 \chapter{Interrogazioni SPARQL}
 
 L'ultima parte del progetto è stata la realizzazione di interrogazioni usando \textbf{SPARQL} (\textbf{SPARQL Protocol and RDF Query Language}), un linguaggio simile a SQL per poter estrarre dati dall'ontologia.
@@ -559,7 +646,7 @@ L'ultima parte del progetto è stata la realizzazione di interrogazioni usando \
 \hfill
 
 Le interrogazioni che abbiamo scritto sono esempi che producono risultati sulla base degli individui d'esempio che abbiamo predisposto. 
-Per realizzarle abbiamo usato le viste \textbf{SPARQL Query} e \textbf{Snap SPARQL Query} di Protegé. 
+Per realizzarle abbiamo usato le viste \textbf{SPARQL Query} e \textbf{Snap SPARQL Query} di \textbf{Protegé}. 
 
 \section{Interrogazione sui contratti di un giocatore}
 
@@ -678,11 +765,52 @@ ORDER BY DESC (?totalGoals)
 	\caption{Risultato della query sulla nostra ontologia. Il nome dell'individuo giocatore è incluso in caso di omonimi.}
 \end{figure}
 
+\chapter{Confronto metriche}
+
+Di seguito un confronto delle metriche dell'ontologia di partenza "Footology" e quella finale "FootOntologyPlus".
+
+\hfill
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Metrica} & \textbf{Footology} & \textbf{FootOntologyPlus} \\
+\hline
+Axiom & 496 & 2.160 \\
+Logical axiom count & 180 & 1.530 \\
+Declaration axioms count & 88 & 437 \\
+Class count & 13 & 81 \\
+Object property count & 26 & 123 \\
+Data property count & 46 & 51 \\
+Individual count & 0 & 180 \\
+Annotation Property count & 5 & 7 \\
+\hline
+\end{tabular}
+\caption{Confronto metriche}
+\end{table}
+
+\hfill
+
+Osservando la tabella si può vedere il lavoro di ristrutturazione e sopratutto di estensione dell'ontologia di partenza.
 
 
 \chapter{Conclusioni}
 
-\medspace
+In conclusione, il nostro progetto ci ha permesso di lavorare concretamente su una vera e propria ontologia, mettendo in pratica i concetti appresi durante il corso. L’obiettivo principale è stato quello di rendere l’ontologia il più possibile completa, coerente e adatta a rappresentare in modo accurato il dominio del calcio.
+
+\hfill
+
+L'ontologia di partenza era molto limitata e incompleta, il che ci ha dato l'opportunità di intervenire in modo significativo con numerose modifiche e aggiunte. Come mostrano le metriche del capitolo precedenti, il numero di classi è passato da 13 a 81, le Object Properties da 26 a 123, etc... questo ci dice quanto è stata ampliata l'ontologia.
+
+\hfill
+
+Questo progetto ci ha inoltre permesso di comprendere l'importanza delle ontologie come strumenti fondamentali per strutturare e interrogare grandi quantità di dati in modo efficiente, verificabile e interoperabile.
+
+\hfill
+
+Sebbene l’espansione realizzata sia focalizzata su uno scenario accademico, il lavoro svolto costituisce una base solida per possibili estensioni future e per l’utilizzo dell’ontologia in applicazioni reali, come sistemi di analisi calcistica, motori di raccomandazione, o strumenti per la gestione e validazione di dataset sportivi complessi.
+
 
 \printbibliography
 
