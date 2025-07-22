@@ -19,6 +19,18 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global/global}
+    \entry{dbpedia}{online}{}{}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labeltitlesource}{title}
+      \field{title}{DBpedia}
+      \verb{urlraw}
+      \verb https://www.dbpedia.org/
+      \endverb
+      \verb{url}
+      \verb https://www.dbpedia.org/
+      \endverb
+    \endentry
     \entry{drawio}{online}{}{}
       \field{sortinit}{D}
       \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
@@ -42,6 +54,18 @@
       \endverb
       \verb{url}
       \verb https://github.com/arditb1997/footology
+      \endverb
+    \endentry
+    \entry{schema}{online}{}{}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labeltitlesource}{title}
+      \field{title}{Schema.org/Person}
+      \verb{urlraw}
+      \verb https://schema.org/Person
+      \endverb
+      \verb{url}
+      \verb https://schema.org/Person
       \endverb
     \endentry
     \entry{webvowl}{online}{}{}

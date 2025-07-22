@@ -102,7 +102,7 @@
   \texttt{0001136879}
   \and
   Alex Mazzotti\\
-  \texttt{matricola}
+  \texttt{0001146685}
 }
 \date{} % Activate to display a given date or no date (if empty),
          % otherwise the current date is printed 
@@ -271,7 +271,7 @@ Come richiesto dalla consegna, è stato necessario integrare l'ontologia con alt
 In particolare, sono stati importati:
 
 \begin{itemize}
-    \item La classe \texttt{Person} dall'ontologia \textit{schema.org}, utilizzata per rappresentare entità individuali come giocatori, illenatori e arbitri. 
+    \item La classe \texttt{Person} dall'ontologia \textit{schema.org} \cite{schema}, utilizzata per rappresentare entità individuali come giocatori, allenatori e arbitri. 
     
     Nella nostra ontologia, \texttt{Person} è stata inserita come superclasse delle classi \texttt{Player}, \texttt{Coach} e \texttt{Referee}. Il join è stato eseguito in modo da includere solo le Object Properties che ci interessavano, escludendo quelle non rilevanti per il nostro dominio.
 
@@ -281,11 +281,11 @@ In particolare, sono stati importati:
         \caption{UML Person}
     \end{figure}
     \newpage
-    \item Le classi \texttt{City} e \texttt{Country} da \textit{dbpedia.org}, adottate per modellare i concetti geografici. 
+    \item Le classi \texttt{City} e \texttt{Country} da \textit{dbpedia.org} \cite{dbpedia}, adottate per modellare i concetti geografici. 
   
     Anche in questo caso è stato effettuato un join selettivo: \texttt{City} e \texttt{Country} sono state collegate alla nostra ontologia per rappresentare, rispettivamente, la città dello stadio, la nazione della lega, e la nazionalità delle persone.
     
-    La relazione \texttt{hasNationality} tra \texttt{Country} e \texttt{Person}, è stata definita direttamente sulla superclasse \texttt{Person}, in modo da inferire tale relazione a tutte le sottoclassi di Person: come \texttt{Player}, \texttt{Referee} o \texttt{Coach}.
+    La relazione \texttt{hasNationality} tra \texttt{Country} e \texttt{Person}, è stata definita direttamente sulla superclasse \texttt{Person}, in modo da poter utilizzare tale relazione per tutte le sue sottoclassi, ovvero \texttt{Player}, \texttt{Referee} e \texttt{Coach}.
 \end{itemize}
 
 \newpage
@@ -296,14 +296,9 @@ In particolare, sono stati importati:
 Come detto a inizio capitolo l'ontologia di partenza era incompleta su vari aspetti. Di seguito, si mostrano i nuovi concetti inseriti.
 
 \begin{itemize}[leftmargin=*]
-    \item \textbf{Contract}
-    \begin{itemize}[leftmargin=2em]
-        \item \texttt{CoachContract}
-        \item \texttt{PlayerContract}
-    \end{itemize}
-  
+    \item \texttt{Contract}, con sottoclassi \texttt{CoachContract} e \texttt{PlayerContract}
 
-     I contratti sono utili per mettere in relazione giocatori e allenatori alle squadre, tenendo conto anche di una storicizzazione con i contratti terminati. Per esempio un contratto terminato, indica che un certo giocatore/allenatore ha giocato per una certa squadra.
+    I contratti sono utili per mettere in relazione giocatori e allenatori alle squadre, tenendo conto anche di una storicizzazione con i contratti terminati. Per esempio un contratto terminato, indica che un certo giocatore/allenatore ha giocato per una certa squadra.
   
     \begin{figure}[H]
         \centering
@@ -315,10 +310,11 @@ Come detto a inizio capitolo l'ontologia di partenza era incompleta su vari aspe
 
     \newpage
     
-    \item \textbf{Formation}
+    \item \texttt{Formation}
+    
     Inizialmente, i moduli adottati dalle squadre nei match erano rappresentati tramite Data Properties. Tuttavia, poiché l’insieme dei moduli più comuni è ben definito (es. 4-3-3, 3-5-2, ecc.), abbiamo preferito modellare i moduli come sottoclassi di \texttt{Formation}.
 
-    \item \textbf{MatchEvent}
+    \item \texttt{MatchEvent}
     
     Gli eventi dei match non erano presenti, quindi li abbiamo inseriti attraverso una gerarchia di classi.
 
@@ -367,26 +363,26 @@ Di seguito una lista delle proprietà più importanti aggiunte.
 
 Object Properties:
 \begin{itemize}
-    \item \textbf{hasEvent} (da \texttt{Match} a \texttt{MatchEvent}): associa a una partita i suoi eventi (goal, falli, sostituzioni, ecc.).
-    \item \textbf{hasFormation} (da \texttt{Team} a \texttt{Formation}): specifica la formazione adottata da una squadra.
-    \item \textbf{hasMatchEvent} (da \texttt{Team} a \texttt{MatchEvent}): collega una squadra agli eventi della partita.
-    \item \textbf{hasPlayer} (da \texttt{Match} a \texttt{Player}): elenca i giocatori che partecipano a una determinata partita.
-    \item \textbf{hasPlayerPerformanceStats} (da \texttt{Match} a \texttt{PlayerPerformanceStats}): collega una partita alle statistiche individuali dei giocatori.
-    \item \textbf{hasPosInFormation} (da \texttt{Formation} a \texttt{Position}): definisce le posizioni previste all'interno di una formazione.
-    \item \textbf{hasTeamFormation} (da \texttt{Match} a \texttt{Formation}): specifica le formazioni usate dalle squadre in una partita.
-    \item \textbf{hasWinner} (da \textit{Match} a \textit{Team}): indica la squadra vincitrice della partita.
-    \item \textbf{includes} (da \texttt{Match} a \texttt{Team}): rappresenta le squadre che partecipano a una partita; ha come sotto-proprietà:
+    \item \texttt{hasEvent} (da \texttt{Match} a \texttt{MatchEvent}): associa a una partita i suoi eventi (goal, falli, sostituzioni, ecc.).
+    \item \texttt{hasFormation} (da \texttt{Team} a \texttt{Formation}): specifica la formazione adottata da una squadra.
+    \item \texttt{hasMatchEvent} (da \texttt{Team} a \texttt{MatchEvent}): collega una squadra agli eventi della partita.
+    \item \texttt{hasPlayer} (da \texttt{Match} a \texttt{Player}): elenca i giocatori che partecipano a una determinata partita.
+    \item \texttt{hasPlayerPerformanceStats} (da \texttt{Match} a \texttt{PlayerPerformanceStats}): collega una partita alle statistiche individuali dei giocatori.
+    \item \texttt{hasPosInFormation} (da \texttt{Formation} a \texttt{Position}): definisce le posizioni previste all'interno di una formazione.
+    \item \texttt{hasTeamFormation} (da \texttt{Match} a \texttt{Formation}): specifica le formazioni usate dalle squadre in una partita.
+    \item \texttt{hasWinner} (da \textit{Match} a \textit{Team}): indica la squadra vincitrice della partita.
+    \item \texttt{includes} (da \texttt{Match} a \texttt{Team}): rappresenta le squadre che partecipano a una partita; ha come sotto-proprietà:
     
     \begin{itemize}
-        \item \textbf{hasHomeTeam}: indica la squadra di casa;
-        \item \textbf{hasAwayTeam}: indica la squadra ospite.
+        \item \texttt{hasHomeTeam}: indica la squadra di casa;
+        \item \texttt{hasAwayTeam}: indica la squadra ospite.
     \end{itemize}
 
-    \item \textbf{involves} (da \texttt{Contract} a \texttt{Player} o \texttt{Coach}): collega un contratto con un giocatore o un allenatore.
-    \item \textbf{partecipatesIn} (da \texttt{Player} a \texttt{Match}): indica le partite a cui ha partecipato un giocatore.
-    \item \textbf{scores} (da \texttt{Player} a \texttt{Goal}): rappresenta i goal segnati da un giocatore.
-    \item \textbf{signs} (da \texttt{Team} a \texttt{Contract}): indica i contratti firmati da una squadra.
-    \item \textbf{statsIn} (da \texttt{PerformanceStats} a \texttt{Match}): collega le statistiche a una specifica partita.
+    \item \texttt{involves} (da \texttt{Contract} a \texttt{Player} o \texttt{Coach}): collega un contratto con un giocatore o un allenatore.
+    \item \texttt{partecipatesIn} (da \texttt{Player} a \texttt{Match}): indica le partite a cui ha partecipato un giocatore.
+    \item \texttt{scores} (da \texttt{Player} a \texttt{Goal}): rappresenta i goal segnati da un giocatore.
+    \item \texttt{signs} (da \texttt{Team} a \texttt{Contract}): indica i contratti firmati da una squadra.
+    \item \texttt{statsIn} (da \texttt{PerformanceStats} a \texttt{Match}): collega le statistiche a una specifica partita.
 \end{itemize}
 
 \newpage
@@ -394,16 +390,16 @@ Object Properties:
 Data Properties:
 
 \begin{itemize}
-    \item \textbf{BallPossession} (su \texttt{TeamPerformanceStats}): indica la percentuale di possesso palla di una squadra in una partita.
-    \item \textbf{BirthDate} (su \texttt{Person}): rappresenta la data di nascita di una persona.
-    \item \textbf{IsFriendlyMatch} (su \texttt{Match}): specifica se una partita è amichevole.
-    \item \textbf{MatchAwayTeamScore} (su \texttt{Match}): indica il numero di goal segnati dalla squadra ospite.
-    \item \textbf{MatchHomeTeamScore} (su \texttt{Match}): indica il numero di goal segnati dalla squadra di casa.
-    \item \textbf{MatchDate} (su \texttt{Match}): rappresenta la data in cui si è svolta la partita.
-    \item \textbf{MinuteOfEvent} (su \texttt{MatchEvent}): indica il minuto della partita in cui si è verificato un evento.
-    \item \textbf{NumberOfDefenders} (su \texttt{Formation}): specifica il numero di difensori nella formazione.
-    \item \textbf{NumberOfMidfielders} (su \texttt{Formation}): specifica il numero di centrocampisti nella formazione.
-    \item \textbf{NumberOfStrikers} (su \texttt{Formation}): specifica il numero di attaccanti nella formazione.
+    \item \texttt{BallPossession} (su \texttt{TeamPerformanceStats}): indica la percentuale di possesso palla di una squadra in una partita.
+    \item \texttt{BirthDate} (su \texttt{Person}): rappresenta la data di nascita di una persona.
+    \item \texttt{IsFriendlyMatch} (su \texttt{Match}): specifica se una partita è amichevole.
+    \item \texttt{MatchAwayTeamScore} (su \texttt{Match}): indica il numero di goal segnati dalla squadra ospite.
+    \item \texttt{MatchHomeTeamScore} (su \texttt{Match}): indica il numero di goal segnati dalla squadra di casa.
+    \item \texttt{MatchDate} (su \texttt{Match}): rappresenta la data in cui si è svolta la partita.
+    \item \texttt{MinuteOfEvent} (su \texttt{MatchEvent}): indica il minuto della partita in cui si è verificato un evento.
+    \item \texttt{NumberOfDefenders} (su \texttt{Formation}): specifica il numero di difensori nella formazione.
+    \item \texttt{NumberOfMidfielders} (su \texttt{Formation}): specifica il numero di centrocampisti nella formazione.
+    \item \texttt{NumberOfStrikers} (su \texttt{Formation}): specifica il numero di attaccanti nella formazione.
 \end{itemize}
 
 \begin{figure}[H]
@@ -422,7 +418,7 @@ Creare tutti gli individui per ogni classe e definire tutte le relative relazion
 
 \hfill
 
-Per velocizzare questa fase, abbiamo utilizzato il framework \textbf{Cellfie}, un plugin di \textbf{Protegé} che consente di generare individui a partire da un file Excel.
+Per velocizzare questa fase, abbiamo utilizzato \textbf{Cellfie}, un plugin di \textbf{Protegé} che consente di generare individui a partire da un file Excel.
 Nel nostro caso, ogni riga del file Excel rappresenta un'istanza (individuo) da creare, mentre le colonne contengono le informazioni associate a questo. In particolare:
 
 \begin{itemize}
@@ -431,11 +427,11 @@ Nel nostro caso, ogni riga del file Excel rappresenta un'istanza (individuo) da 
 \end{itemize}
 \newpage
 \section{Esempio inserimento con Cellfie}
-Di seguito è riportato come abbiamo inserito molti contratti, presenti in un file Excel, attraverso il plugin \textbf{Cellfie} e come abbiamo impostato le regole.
+Di seguito è riportato come abbiamo inserito molti contratti, presenti in un file Excel, attraverso il plugin \textbf{Cellfie} e come abbiamo impostato le regole di trasformazione necessarie a trasformare i dati grezzi in individui e relazioni vere e proprie.
 
 \hfill
 
-Nella Figura 4.1 è mostrata la tabella da inserire, mentre nell'immagine 4.2 si può osservare come sono impostati i campi di ogni colonna.
+Nella Figura 4.1 è mostrata la tabella da inserire, mentre nell'immagine 4.2 si può osservare come sono utilizzati i campi di ogni colonna.
 In questo caso abbiamo:
 \begin{itemize}
     \item Colonna A: rappresenta il nome dell'individuo
@@ -451,12 +447,13 @@ In questo caso abbiamo:
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\linewidth]{EXCELCONTRACT.jpeg}
-    \caption{Excel dei contratti}
+    \caption{Foglio Excel dei contratti}
 \end{figure}
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\linewidth]{RULECELLFIE.jpeg}
-    \caption{Regola per inserire i contratti presenti nell'Excel}
+    \caption{Regola di trasformazione per creare i contratti presenti nel foglio Excel}
 \end{figure}
 
 \chapter{Regole SWRL}
@@ -468,8 +465,8 @@ In questo caso abbiamo:
 Nella nostra ontologia abbiamo inserito numerose regole, utili a:
 
 \begin{enumerate}
-    \item inferire nuovi collegamenti tra i dati
-    \item individuare casi di errore sui dati
+    \item inferire nuovi collegamenti tra i dati;
+    \item individuare casi di errore sui dati.
 \end{enumerate}
 
 Le sezioni che seguono riportano tali regole, non in un ordine particolare.
@@ -763,7 +760,7 @@ Di seguito un confronto delle metriche dell'ontologia di partenza "Footology" e 
 \hline
 \textbf{Metrica} & \textbf{Footology} & \textbf{FootOntologyPlus} \\
 \hline
-Axiom & 496 & 2.160 \\
+Axioms & 496 & 2.160 \\
 Logical axiom count & 180 & 1.530 \\
 Declaration axioms count & 88 & 437 \\
 Class count & 13 & 81 \\
